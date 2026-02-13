@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaBIIC2 - {{ active_tab|default('Data') }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        (function() {
+            var theme = localStorage.getItem("theme");
+            if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="app-title">TaBIIC<span class="version">2</span></h1>
+        <nav class="tab-nav">
+            <a href="{{ url_for('data_tab') }}"
+               class="tab-link {% if active_tab == 'data' %}active{% endif %}">Data</a>
+            <a href="{{ url_for('taxonomy_tab') }}"
+               class="tab-link {% if active_tab == 'taxonomy' %}active{% endif %}">Taxonomy</a>
+        </nav>
+        <div class="header-spacer"></div>
+        <div class="theme-toggle-wrapper">
+            <span class="theme-toggle-label">Dark</span>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+        </div>
+    </header>
+    <script>
+        document.getElementById("theme-toggle").addEventListener("click", function() {
+            var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+            if (isDark) {
+                document.documentElement.removeAttribute("data-theme");
+                localStorage.setItem("theme", "light");
+            } else {
+                document.documentElement.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+            }
+        });
+    </script>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="flash-messages">
+        {% for message in messages %}
+        <div class="flash-message">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <main class="main-{{ active_tab|default('data') }}">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>
