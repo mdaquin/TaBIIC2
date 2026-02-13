@@ -250,14 +250,16 @@ def add_concept():
         return jsonify({"error": "At least one restriction is required"}), 400
 
     try:
-        add_subconcept(
+        new_id = add_subconcept(
             app_state.taxonomy, parent_id, restrictions,
             app_state.raw_df, app_state.column_meta, name
         )
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
-    return jsonify(serialize_taxonomy(app_state.taxonomy))
+    result = serialize_taxonomy(app_state.taxonomy)
+    result["new_concept_id"] = new_id
+    return jsonify(result)
 
 
 @app.route("/taxonomy/api/concept/<concept_id>", methods=["PUT"])
@@ -302,14 +304,16 @@ def complement_concepts():
         return jsonify({"error": "Select at least one concept"}), 400
 
     try:
-        create_complement(
+        new_id = create_complement(
             app_state.taxonomy, concept_ids,
             app_state.raw_df, app_state.column_meta
         )
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
 
-    return jsonify(serialize_taxonomy(app_state.taxonomy))
+    result = serialize_taxonomy(app_state.taxonomy)
+    result["new_concept_id"] = new_id
+    return jsonify(result)
 
 
 @app.route("/taxonomy/api/union", methods=["POST"])
@@ -324,14 +328,16 @@ def union_concepts():
         return jsonify({"error": "Select at least two concepts for union"}), 400
 
     try:
-        create_union(
+        new_id = create_union(
             app_state.taxonomy, concept_ids,
             app_state.raw_df, app_state.column_meta
         )
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
-    return jsonify(serialize_taxonomy(app_state.taxonomy))
+    result = serialize_taxonomy(app_state.taxonomy)
+    result["new_concept_id"] = new_id
+    return jsonify(result)
 
 
 @app.route("/taxonomy/api/intersection", methods=["POST"])
@@ -346,14 +352,16 @@ def intersect_concepts():
         return jsonify({"error": "Select at least two concepts for intersection"}), 400
 
     try:
-        create_intersection(
+        new_id = create_intersection(
             app_state.taxonomy, concept_ids,
             app_state.raw_df, app_state.column_meta
         )
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
-    return jsonify(serialize_taxonomy(app_state.taxonomy))
+    result = serialize_taxonomy(app_state.taxonomy)
+    result["new_concept_id"] = new_id
+    return jsonify(result)
 
 
 @app.route("/taxonomy/api/concept/<concept_id>/restrictions")

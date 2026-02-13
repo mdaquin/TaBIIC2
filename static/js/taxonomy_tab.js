@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     coverage: node.coverage,
                     hasChildren: node.child_ids.length > 0,
                     origin: node.origin,
+                    source_ids: node.source_ids,
                     restrictions: node.restrictions,
                     parent_ids: node.parent_ids,
                     child_ids: node.child_ids,
@@ -168,6 +169,16 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (selectedNodes.size === 0) {
             showDetailPlaceholder();
         }
+    }
+
+    // -- Select a newly created concept --------------------------------------
+    function selectNewConcept(data) {
+        taxonomyData = data;
+        selectedNodes.clear();
+        if (data.new_concept_id) {
+            selectedNodes.add(data.new_concept_id);
+        }
+        renderGraph(data);
     }
 
     // -- Selection -----------------------------------------------------------
@@ -224,6 +235,49 @@ document.addEventListener("DOMContentLoaded", function () {
             count + ' concepts selected</p></div>';
     }
 
+    function getConceptLabel(conceptId) {
+        var node = findNode(conceptId);
+        if (!node) return conceptId.substring(0, 6);
+        if (node.name) return node.name;
+        if (node.restrictions && node.restrictions.length > 0) {
+            return node.restrictions.map(function (r) {
+                return r.column + " " + r.operator + " " + r.value;
+            }).join(", ");
+        }
+        if (node.origin === "root") return "Root";
+        return conceptId.substring(0, 6);
+    }
+
+    function buildOriginDescription(node) {
+        if (node.origin === "root") return "";
+
+        var sourceNames = (node.source_ids || []).map(function (sid) {
+            return escapeHtml(getConceptLabel(sid));
+        });
+
+        if (sourceNames.length === 0) return "";
+
+        var label = "";
+        switch (node.origin) {
+            case "restriction":
+                label = "Subconcept of " + sourceNames.join(", ");
+                break;
+            case "complement":
+                label = "Complement of " + sourceNames.join(", ");
+                break;
+            case "union":
+                label = "Union of " + sourceNames.join(", ");
+                break;
+            case "intersection":
+                label = "Intersection of " + sourceNames.join(", ");
+                break;
+            default:
+                label = node.origin;
+        }
+
+        return '<div class="detail-origin"><h4>Origin</h4><p>' + label + '</p></div>';
+    }
+
     function showConceptDetail(conceptId) {
         var node = findNode(conceptId);
         if (!node) return;
@@ -243,8 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var coverageClass = node.child_ids.length === 0 ? "" :
             (node.coverage >= 1.0 ? "coverage-full" : "coverage-partial");
 
-        var originBadge = node.origin !== "root" ?
-            '<span class="stat">' + escapeHtml(node.origin) + '</span>' : '';
+        var originHtml = buildOriginDescription(node);
 
         var html =
             '<div class="detail-content">' +
@@ -257,8 +310,8 @@ document.addEventListener("DOMContentLoaded", function () {
             '  <div class="detail-stats">' +
             '    <span class="stat">' + node.size + ' rows</span>' +
             '    <span class="stat ' + coverageClass + '">' + coveragePct + '% covered</span>' +
-            originBadge +
             '  </div>' +
+            originHtml +
             restrictionsHtml +
             '</div>';
 
@@ -458,8 +511,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(function (data) {
                 if (data.error) { alert("Error: " + data.error); return; }
                 modal.hidden = true;
-                taxonomyData = data;
-                renderGraph(data);
+                selectNewConcept(data);
             });
     });
 
@@ -474,8 +526,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(function (r) { return r.json(); })
             .then(function (data) {
                 if (data.error) { alert("Error: " + data.error); return; }
-                taxonomyData = data;
-                renderGraph(data);
+                selectNewConcept(data);
             });
     });
 
@@ -490,8 +541,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(function (r) { return r.json(); })
             .then(function (data) {
                 if (data.error) { alert("Error: " + data.error); return; }
-                taxonomyData = data;
-                renderGraph(data);
+                selectNewConcept(data);
             });
     });
 
@@ -506,8 +556,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(function (r) { return r.json(); })
             .then(function (data) {
                 if (data.error) { alert("Error: " + data.error); return; }
-                taxonomyData = data;
-                renderGraph(data);
+                selectNewConcept(data);
             });
     });
 

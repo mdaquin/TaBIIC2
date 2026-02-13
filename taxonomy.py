@@ -20,6 +20,7 @@ def create_taxonomy(df):
         "child_ids": [],
         "row_indices": list(df.index),
         "origin": "root",
+        "source_ids": [],
     }
     return {
         "concepts": {root_id: root},
@@ -133,6 +134,7 @@ def add_subconcept(taxonomy, parent_id, restrictions, raw_df, column_meta, name=
         "child_ids": [],
         "row_indices": [],
         "origin": "restriction",
+        "source_ids": [parent_id],
     }
 
     taxonomy["concepts"][new_id] = concept
@@ -174,6 +176,7 @@ def create_complement(taxonomy, concept_ids, raw_df, column_meta):
         "child_ids": [],
         "row_indices": complement_rows,
         "origin": "complement",
+        "source_ids": list(concept_ids),
     }
 
     taxonomy["concepts"][new_id] = concept
@@ -197,6 +200,7 @@ def create_union(taxonomy, concept_ids, raw_df, column_meta):
         "child_ids": list(concept_ids),
         "row_indices": sorted(union_rows),
         "origin": "union",
+        "source_ids": list(concept_ids),
     }
 
     taxonomy["concepts"][new_id] = concept
@@ -232,6 +236,7 @@ def create_intersection(taxonomy, concept_ids, raw_df, column_meta):
         "child_ids": [],
         "row_indices": sorted(intersection_rows) if intersection_rows else [],
         "origin": "intersection",
+        "source_ids": list(concept_ids),
     }
 
     taxonomy["concepts"][new_id] = concept
@@ -344,6 +349,7 @@ def serialize_taxonomy(taxonomy):
             "size": len(concept["row_indices"]),
             "coverage": round(coverage, 4),
             "origin": concept["origin"],
+            "source_ids": concept.get("source_ids", []),
             "parent_ids": concept["parent_ids"],
             "child_ids": concept["child_ids"],
         })
