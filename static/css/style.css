@@ -557,6 +557,10 @@ main.main-taxonomy {
     z-index: 1000;
 }
 
+.modal-overlay[hidden] {
+    display: none;
+}
+
 .modal-dialog {
     background: var(--bg-card);
     border: 1px solid var(--border);
