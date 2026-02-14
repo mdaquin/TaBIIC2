@@ -664,3 +664,94 @@ main.main-taxonomy {
     font-size: 0.9rem;
     line-height: 1;
 }
+
+/* =============================================
+   WSOM DISCOVERY
+   ============================================= */
+
+/* Progress overlay */
+.wsom-progress-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.wsom-progress-overlay[hidden] {
+    display: none;
+}
+
+.wsom-progress-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    min-width: 320px;
+}
+
+.wsom-progress-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.wsom-progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background: var(--btn-secondary-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.wsom-progress-bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.wsom-progress-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Validation bar */
+.wsom-validation-bar {
+    background: hsl(45, 90%, 95%);
+    border: 1px solid hsl(45, 80%, 70%);
+    border-radius: 6px;
+    padding: 0.5rem 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.wsom-validation-bar[hidden] {
+    display: none;
+}
+
+[data-theme="dark"] .wsom-validation-bar {
+    background: hsl(45, 30%, 20%);
+    border-color: hsl(45, 40%, 35%);
+    color: hsl(45, 50%, 80%);
+}
+
+.wsom-validation-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.wsom-validation-actions .btn {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.9rem;
+}

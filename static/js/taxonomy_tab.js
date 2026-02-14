@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var selectedNodes = new Set();
     var taxonomyData = null;
     var availableRestrictions = null;
+    var wsomPollingInterval = null;
+    var wsomParentId = null;
+    var wsomValidationMode = false;
 
     // -- Initialisation ------------------------------------------------------
     initCytoscape();
@@ -36,6 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         "border-width": 1,
                         "border-color": "var(--border)",
                         "color": "var(--text)",
+                    },
+                },
+                {
+                    selector: "node[?proposed]",
+                    style: {
+                        "border-width": 2,
+                        "border-color": "#f59e0b",
+                        "border-style": "dashed",
                     },
                 },
                 {
@@ -122,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     restrictions: node.restrictions,
                     parent_ids: node.parent_ids,
                     child_ids: node.child_ids,
+                    proposed: node.proposed || false,
                 },
             });
         });
@@ -206,11 +218,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // -- Toolbar state -------------------------------------------------------
     function updateToolbarState() {
+        if (wsomValidationMode) {
+            document.getElementById("btn-add-subconcept").disabled = true;
+            document.getElementById("btn-find-subconcepts").disabled = true;
+            document.getElementById("btn-complement").disabled = true;
+            document.getElementById("btn-union").disabled = true;
+            document.getElementById("btn-intersection").disabled = true;
+            document.getElementById("btn-delete").disabled = true;
+            document.getElementById("btn-reset-taxonomy").disabled = true;
+            return;
+        }
+
         var count = selectedNodes.size;
         document.getElementById("btn-add-subconcept").disabled = (count !== 1);
+        document.getElementById("btn-find-subconcepts").disabled = (count !== 1);
         document.getElementById("btn-complement").disabled = (count < 1);
         document.getElementById("btn-union").disabled = (count < 2);
         document.getElementById("btn-intersection").disabled = (count < 2);
+        document.getElementById("btn-reset-taxonomy").disabled = false;
 
         // Don't allow deleting root
         var canDelete = count > 0;
@@ -270,6 +295,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
             case "intersection":
                 label = "Intersection of " + sourceNames.join(", ");
+                break;
+            case "wsom":
+                label = "WSOM discovery from " + sourceNames.join(", ");
                 break;
             default:
                 label = node.origin;
@@ -599,6 +627,131 @@ document.addEventListener("DOMContentLoaded", function () {
                 showDetailPlaceholder();
             });
     });
+
+    // -- WSOM discovery ------------------------------------------------------
+    document.getElementById("btn-find-subconcepts").addEventListener("click", function () {
+        if (selectedNodes.size !== 1) return;
+        wsomParentId = Array.from(selectedNodes)[0];
+        document.getElementById("modal-wsom-params").hidden = false;
+    });
+
+    document.getElementById("btn-start-wsom").addEventListener("click", function () {
+        var mapSize = parseInt(document.getElementById("wsom-map-size").value, 10);
+        var sparcity = parseFloat(document.getElementById("wsom-sparcity").value);
+        var epochs = parseInt(document.getElementById("wsom-epochs").value, 10);
+
+        document.getElementById("modal-wsom-params").hidden = true;
+        document.getElementById("wsom-progress-overlay").hidden = false;
+        document.getElementById("wsom-progress-bar").style.width = "0%";
+        document.getElementById("wsom-progress-text").textContent = "Epoch 0 / " + epochs;
+
+        fetch("/taxonomy/api/wsom/start", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                concept_id: wsomParentId,
+                map_size: mapSize,
+                sparcity_coeff: sparcity,
+                n_epochs: epochs,
+            }),
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (data.error) {
+                    document.getElementById("wsom-progress-overlay").hidden = true;
+                    alert("Error: " + data.error);
+                    return;
+                }
+                startWsomPolling();
+            })
+            .catch(function (err) {
+                document.getElementById("wsom-progress-overlay").hidden = true;
+                alert("Error starting training: " + err);
+            });
+    });
+
+    function startWsomPolling() {
+        wsomPollingInterval = setInterval(function () {
+            fetch("/taxonomy/api/wsom/progress")
+                .then(function (r) { return r.json(); })
+                .then(function (data) {
+                    if (data.status === "training") {
+                        var pct = (data.progress / data.total * 100).toFixed(1);
+                        document.getElementById("wsom-progress-bar").style.width = pct + "%";
+                        document.getElementById("wsom-progress-text").textContent =
+                            "Epoch " + data.progress + " / " + data.total;
+                    } else if (data.status === "complete") {
+                        clearInterval(wsomPollingInterval);
+                        wsomPollingInterval = null;
+                        document.getElementById("wsom-progress-overlay").hidden = true;
+
+                        if (data.proposed_ids.length === 0) {
+                            alert("No characteristic sub-concepts were found. Try adjusting the parameters.");
+                            return;
+                        }
+
+                        wsomValidationMode = true;
+                        taxonomyData = data.graph;
+                        selectedNodes.clear();
+                        renderGraph(data.graph);
+                        document.getElementById("wsom-validation-bar").hidden = false;
+                        updateToolbarState();
+                    } else if (data.status === "error") {
+                        clearInterval(wsomPollingInterval);
+                        wsomPollingInterval = null;
+                        document.getElementById("wsom-progress-overlay").hidden = true;
+                        alert("Training error: " + data.error);
+                    } else if (data.status === "idle") {
+                        clearInterval(wsomPollingInterval);
+                        wsomPollingInterval = null;
+                        document.getElementById("wsom-progress-overlay").hidden = true;
+                    }
+                })
+                .catch(function () {
+                    // Ignore transient fetch errors during polling
+                });
+        }, 500);
+    }
+
+    document.getElementById("btn-wsom-validate").addEventListener("click", function () {
+        resolveWsom("validate");
+    });
+
+    document.getElementById("btn-wsom-cancel").addEventListener("click", function () {
+        resolveWsom("cancel");
+    });
+
+    document.getElementById("btn-wsom-retry").addEventListener("click", function () {
+        resolveWsom("retry");
+    });
+
+    function resolveWsom(action) {
+        fetch("/taxonomy/api/wsom/resolve", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ action: action }),
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (data.error) { alert("Error: " + data.error); return; }
+
+                wsomValidationMode = false;
+                document.getElementById("wsom-validation-bar").hidden = true;
+
+                taxonomyData = data;
+                selectedNodes.clear();
+                renderGraph(data);
+                updateToolbarState();
+
+                if (action === "retry" && data.retry_parent_id) {
+                    wsomParentId = data.retry_parent_id;
+                    selectedNodes.add(wsomParentId);
+                    var node = cy.getElementById(wsomParentId);
+                    if (node.length) node.select();
+                    document.getElementById("modal-wsom-params").hidden = false;
+                }
+            });
+    }
 
     // -- Modal close ---------------------------------------------------------
     document.querySelectorAll("[data-dismiss='modal']").forEach(function (btn) {

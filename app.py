@@ -1,3 +1,8 @@
+import logging
+import threading
+
+logging.basicConfig(level=logging.INFO)
+
 from flask import Flask, render_template, request, jsonify, redirect, url_for, flash
 from markupsafe import Markup
 import config
@@ -8,6 +13,7 @@ from taxonomy import (
     create_union, create_intersection, delete_concept,
     serialize_taxonomy, get_available_restrictions,
 )
+from wsom_discovery import run_wsom_training
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -385,8 +391,127 @@ def concept_restrictions(concept_id):
 def reset_taxonomy():
     if not app_state.is_loaded():
         return jsonify({"error": "No data loaded"}), 400
+    app_state.reset_wsom()
     app_state.taxonomy = create_taxonomy(app_state.raw_df)
     return jsonify(serialize_taxonomy(app_state.taxonomy))
+
+
+# -- WSOM discovery -----------------------------------------------------------
+
+def _annotate_proposed(result):
+    """Mark nodes as proposed if they are in the WSOM proposed set."""
+    proposed_set = set(app_state.wsom_proposed_ids)
+    for node in result.get("nodes", []):
+        node["proposed"] = node["id"] in proposed_set
+    return result
+
+
+def _remove_proposed_concepts():
+    """Remove all proposed WSOM concepts from the taxonomy."""
+    for cid in list(app_state.wsom_proposed_ids):
+        concept = app_state.taxonomy["concepts"].get(cid)
+        if concept:
+            for pid in concept["parent_ids"]:
+                parent = app_state.taxonomy["concepts"].get(pid)
+                if parent and cid in parent["child_ids"]:
+                    parent["child_ids"].remove(cid)
+            del app_state.taxonomy["concepts"][cid]
+
+
+@app.route("/taxonomy/api/wsom/start", methods=["POST"])
+def wsom_start():
+    if app_state.taxonomy is None:
+        return jsonify({"error": "No taxonomy initialized"}), 400
+
+    if app_state.wsom_training:
+        return jsonify({"error": "Training already in progress"}), 409
+
+    data = request.get_json()
+    concept_id = data.get("concept_id")
+    map_size = int(data.get("map_size", 5))
+    sparcity_coeff = float(data.get("sparcity_coeff", 0.01))
+    n_epochs = int(data.get("n_epochs", 100))
+
+    if concept_id not in app_state.taxonomy["concepts"]:
+        return jsonify({"error": "Concept not found"}), 404
+
+    concept = app_state.taxonomy["concepts"][concept_id]
+    if len(concept["row_indices"]) < 4:
+        return jsonify({"error": "Concept has too few rows (need at least 4)"}), 400
+
+    if map_size < 2 or map_size > 20:
+        return jsonify({"error": "Map size must be between 2 and 20"}), 400
+
+    if n_epochs < 1 or n_epochs > 5000:
+        return jsonify({"error": "Epochs must be between 1 and 5000"}), 400
+
+    app_state.reset_wsom()
+    app_state.wsom_training = True
+    app_state.wsom_parent_id = concept_id
+    app_state.wsom_total_epochs = n_epochs
+
+    thread = threading.Thread(
+        target=run_wsom_training,
+        args=(app_state, concept_id, map_size, sparcity_coeff, n_epochs),
+        daemon=True,
+    )
+    app_state.wsom_thread = thread
+    thread.start()
+
+    return jsonify({"status": "started", "total_epochs": n_epochs})
+
+
+@app.route("/taxonomy/api/wsom/progress")
+def wsom_progress():
+    if app_state.wsom_error:
+        error = app_state.wsom_error
+        app_state.reset_wsom()
+        return jsonify({"status": "error", "error": error})
+
+    if app_state.wsom_training:
+        return jsonify({
+            "status": "training",
+            "progress": app_state.wsom_progress,
+            "total": app_state.wsom_total_epochs,
+        })
+
+    if app_state.wsom_proposed_ids:
+        result = _annotate_proposed(serialize_taxonomy(app_state.taxonomy))
+        return jsonify({
+            "status": "complete",
+            "proposed_ids": app_state.wsom_proposed_ids,
+            "graph": result,
+        })
+
+    return jsonify({"status": "idle"})
+
+
+@app.route("/taxonomy/api/wsom/resolve", methods=["POST"])
+def wsom_resolve():
+    if app_state.taxonomy is None:
+        return jsonify({"error": "No taxonomy initialized"}), 400
+
+    data = request.get_json()
+    action = data.get("action")
+
+    if action == "validate":
+        app_state.reset_wsom()
+        return jsonify(serialize_taxonomy(app_state.taxonomy))
+
+    elif action == "cancel":
+        _remove_proposed_concepts()
+        app_state.reset_wsom()
+        return jsonify(serialize_taxonomy(app_state.taxonomy))
+
+    elif action == "retry":
+        parent_id = app_state.wsom_parent_id
+        _remove_proposed_concepts()
+        app_state.reset_wsom()
+        result = serialize_taxonomy(app_state.taxonomy)
+        result["retry_parent_id"] = parent_id
+        return jsonify(result)
+
+    return jsonify({"error": "Invalid action"}), 400
 
 
 if __name__ == "__main__":
