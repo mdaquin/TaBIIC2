@@ -10,8 +10,9 @@ from state import app_state
 from data_processing import loader, detector, summariser, encoder
 from taxonomy import (
     create_taxonomy, add_subconcept, create_complement,
-    create_union, create_intersection, delete_concept,
-    serialize_taxonomy, get_available_restrictions,
+    create_union, create_intersection, create_pairwise_intersections,
+    create_merge, delete_concept,
+    update_restrictions, serialize_taxonomy, get_available_restrictions,
 )
 from wsom_discovery import run_wsom_training
 
@@ -280,6 +281,12 @@ def rename_concept(concept_id):
     if "name" in data:
         app_state.taxonomy["concepts"][concept_id]["name"] = data["name"]
 
+    if "restrictions" in data:
+        update_restrictions(
+            app_state.taxonomy, concept_id, data["restrictions"],
+            app_state.raw_df, app_state.column_meta
+        )
+
     return jsonify(serialize_taxonomy(app_state.taxonomy))
 
 
@@ -370,6 +377,51 @@ def intersect_concepts():
     return jsonify(result)
 
 
+@app.route("/taxonomy/api/find-intersections", methods=["POST"])
+def find_intersections():
+    if app_state.taxonomy is None:
+        return jsonify({"error": "No taxonomy initialized"}), 400
+
+    data = request.get_json()
+    concept_ids = data.get("concept_ids", [])
+
+    if len(concept_ids) < 2:
+        return jsonify({"error": "Select at least two concepts"}), 400
+
+    new_ids = create_pairwise_intersections(app_state.taxonomy, concept_ids)
+
+    if not new_ids:
+        return jsonify({"error": "No non-empty intersections found"}), 400
+
+    result = serialize_taxonomy(app_state.taxonomy)
+    result["new_concept_ids"] = new_ids
+    return jsonify(result)
+
+
+@app.route("/taxonomy/api/merge", methods=["POST"])
+def merge_concepts():
+    if app_state.taxonomy is None:
+        return jsonify({"error": "No taxonomy initialized"}), 400
+
+    data = request.get_json()
+    concept_ids = data.get("concept_ids", [])
+
+    if len(concept_ids) < 2:
+        return jsonify({"error": "Select at least two concepts to merge"}), 400
+
+    try:
+        new_id = create_merge(
+            app_state.taxonomy, concept_ids,
+            app_state.raw_df, app_state.column_meta
+        )
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
+
+    result = serialize_taxonomy(app_state.taxonomy)
+    result["new_concept_id"] = new_id
+    return jsonify(result)
+
+
 @app.route("/taxonomy/api/concept/<concept_id>/restrictions")
 def concept_restrictions(concept_id):
     if app_state.taxonomy is None:
@@ -394,6 +446,20 @@ def reset_taxonomy():
     app_state.reset_wsom()
     app_state.taxonomy = create_taxonomy(app_state.raw_df)
     return jsonify(serialize_taxonomy(app_state.taxonomy))
+
+
+@app.route("/taxonomy/api/columns")
+def get_taxonomy_columns():
+    if app_state.column_meta is None:
+        return jsonify([])
+    included = app_state.column_meta[
+        (app_state.column_meta["include"] == True)
+        & (app_state.column_meta["user_type"] != "title_id")
+    ]
+    return jsonify([
+        {"name": col, "type": included.at[col, "user_type"]}
+        for col in included.index
+    ])
 
 
 # -- WSOM discovery -----------------------------------------------------------
@@ -431,6 +497,7 @@ def wsom_start():
     map_size = int(data.get("map_size", 5))
     sparcity_coeff = float(data.get("sparcity_coeff", 0.01))
     n_epochs = int(data.get("n_epochs", 100))
+    ignore_columns = data.get("ignore_columns", [])
 
     if concept_id not in app_state.taxonomy["concepts"]:
         return jsonify({"error": "Concept not found"}), 404
@@ -452,7 +519,7 @@ def wsom_start():
 
     thread = threading.Thread(
         target=run_wsom_training,
-        args=(app_state, concept_id, map_size, sparcity_coeff, n_epochs),
+        args=(app_state, concept_id, map_size, sparcity_coeff, n_epochs, ignore_columns),
         daemon=True,
     )
     app_state.wsom_thread = thread

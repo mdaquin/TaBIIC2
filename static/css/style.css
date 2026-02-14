@@ -512,15 +512,10 @@ main.main-taxonomy {
     color: var(--text-secondary);
 }
 
-.detail-restrictions ul {
-    list-style: none;
-    padding: 0;
-    font-size: 0.85rem;
-}
-
-.detail-restrictions li {
-    padding: 0.2rem 0;
-    color: var(--text-secondary);
+.detail-restrictions-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .coverage-full {
@@ -668,6 +663,27 @@ main.main-taxonomy {
 /* =============================================
    WSOM DISCOVERY
    ============================================= */
+
+/* Column checkboxes for WSOM modal */
+.wsom-column-checkboxes {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.5rem;
+    background: var(--bg);
+}
+
+.wsom-column-checkbox {
+    display: block;
+    padding: 0.2rem 0;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.wsom-column-checkbox input {
+    margin-right: 0.4rem;
+}
 
 /* Progress overlay */
 .wsom-progress-overlay {

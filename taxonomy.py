@@ -103,6 +103,25 @@ def _apply_comparison(series, op, value):
     return pd.Series(True, index=series.index)
 
 
+# -- Restriction update -------------------------------------------------------
+
+def update_restrictions(taxonomy, concept_id, restrictions, raw_df, column_meta):
+    """Update a concept's restrictions and recompute row indices for it and descendants."""
+    concept = taxonomy["concepts"][concept_id]
+    concept["restrictions"] = restrictions
+    concept["row_indices"] = compute_row_indices(concept, taxonomy, raw_df, column_meta)
+    _recompute_descendants(taxonomy, concept_id, raw_df, column_meta)
+
+
+def _recompute_descendants(taxonomy, concept_id, raw_df, column_meta):
+    """Recursively recompute row_indices for all descendants of a concept."""
+    concept = taxonomy["concepts"][concept_id]
+    for child_id in concept["child_ids"]:
+        child = taxonomy["concepts"][child_id]
+        child["row_indices"] = compute_row_indices(child, taxonomy, raw_df, column_meta)
+        _recompute_descendants(taxonomy, child_id, raw_df, column_meta)
+
+
 # -- Coverage -----------------------------------------------------------------
 
 def compute_coverage(concept, taxonomy):
@@ -247,6 +266,169 @@ def create_intersection(taxonomy, concept_ids, raw_df, column_meta):
             c["child_ids"].append(new_id)
 
     return new_id
+
+
+def create_pairwise_intersections(taxonomy, concept_ids):
+    """Create intersection concepts for all pairs with non-empty overlap.
+
+    Returns list of newly created concept IDs (only non-empty intersections).
+    """
+    new_ids = []
+    for i in range(len(concept_ids)):
+        for j in range(i + 1, len(concept_ids)):
+            cid_a = concept_ids[i]
+            cid_b = concept_ids[j]
+            rows_a = set(taxonomy["concepts"][cid_a]["row_indices"])
+            rows_b = set(taxonomy["concepts"][cid_b]["row_indices"])
+            common = rows_a & rows_b
+            if not common:
+                continue
+
+            new_id = new_concept_id()
+            concept = {
+                "id": new_id,
+                "name": "",
+                "restrictions": [],
+                "parent_ids": [cid_a, cid_b],
+                "child_ids": [],
+                "row_indices": sorted(common),
+                "origin": "intersection",
+                "source_ids": [cid_a, cid_b],
+            }
+            taxonomy["concepts"][new_id] = concept
+            taxonomy["concepts"][cid_a]["child_ids"].append(new_id)
+            taxonomy["concepts"][cid_b]["child_ids"].append(new_id)
+            new_ids.append(new_id)
+
+    return new_ids
+
+
+def create_merge(taxonomy, concept_ids, raw_df, column_meta):
+    """Merge concepts with restrictions on the same numerical column.
+
+    Creates a new sibling concept whose restrictions are the hull interval
+    covering all selected concepts' restrictions on that column.
+    All selected concepts must share a common parent and have restrictions
+    on the same numerical column.
+    """
+    if len(concept_ids) < 2:
+        raise ValueError("Select at least two concepts to merge")
+
+    concepts = [taxonomy["concepts"][cid] for cid in concept_ids]
+
+    # Find common parent
+    parent_sets = [set(c["parent_ids"]) for c in concepts]
+    common_parents = parent_sets[0]
+    for ps in parent_sets[1:]:
+        common_parents &= ps
+
+    if not common_parents:
+        raise ValueError("Selected concepts must share a common parent")
+
+    parent_id = list(common_parents)[0]
+
+    # Find common numerical column across all concepts' restrictions
+    common_col = _find_common_numeric_column(concepts, column_meta)
+    if common_col is None:
+        raise ValueError(
+            "Selected concepts must all have restrictions on the same numerical column"
+        )
+
+    # Compute hull restrictions
+    hull_restrictions = _compute_hull_restrictions(concepts, common_col)
+    if not hull_restrictions:
+        raise ValueError("Could not compute merged restrictions")
+
+    # Create new concept
+    new_id = new_concept_id()
+    concept = {
+        "id": new_id,
+        "name": "",
+        "restrictions": hull_restrictions,
+        "parent_ids": [parent_id],
+        "child_ids": [],
+        "row_indices": [],
+        "origin": "merge",
+        "source_ids": list(concept_ids),
+    }
+
+    taxonomy["concepts"][new_id] = concept
+    concept["row_indices"] = compute_row_indices(concept, taxonomy, raw_df, column_meta)
+    taxonomy["concepts"][parent_id]["child_ids"].append(new_id)
+
+    # Remove the original concepts (they are replaced by the merged one)
+    for cid in concept_ids:
+        delete_concept(taxonomy, cid)
+
+    return new_id
+
+
+def _find_common_numeric_column(concepts, column_meta):
+    """Find a numerical column that appears in all concepts' restrictions."""
+    col_sets = []
+    for concept in concepts:
+        cols = set()
+        for r in concept.get("restrictions", []):
+            col = r["column"]
+            if col in column_meta.index:
+                ctype = column_meta.at[col, "user_type"]
+                if ctype == "numeric":
+                    cols.add(col)
+        col_sets.append(cols)
+
+    if not col_sets:
+        return None
+
+    common = col_sets[0]
+    for s in col_sets[1:]:
+        common &= s
+
+    if not common:
+        return None
+
+    return sorted(common)[0]
+
+
+def _compute_hull_restrictions(concepts, column):
+    """Compute hull interval restrictions covering all concepts' ranges."""
+    all_have_lower = True
+    all_have_upper = True
+    lower_vals = []
+    upper_vals = []
+
+    for concept in concepts:
+        has_lower = False
+        has_upper = False
+        for r in concept.get("restrictions", []):
+            if r["column"] != column:
+                continue
+            if r["operator"] in (">=", ">"):
+                lower_vals.append(float(r["value"]))
+                has_lower = True
+            elif r["operator"] in ("<", "<="):
+                upper_vals.append(float(r["value"]))
+                has_upper = True
+
+        if not has_lower:
+            all_have_lower = False
+        if not has_upper:
+            all_have_upper = False
+
+    restrictions = []
+    if all_have_lower and lower_vals:
+        restrictions.append({
+            "column": column,
+            "operator": ">=",
+            "value": min(lower_vals),
+        })
+    if all_have_upper and upper_vals:
+        restrictions.append({
+            "column": column,
+            "operator": "<",
+            "value": max(upper_vals),
+        })
+
+    return restrictions
 
 
 def delete_concept(taxonomy, concept_id):

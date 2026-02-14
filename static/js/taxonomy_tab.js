@@ -224,6 +224,8 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("btn-complement").disabled = true;
             document.getElementById("btn-union").disabled = true;
             document.getElementById("btn-intersection").disabled = true;
+            document.getElementById("btn-find-intersections").disabled = true;
+            document.getElementById("btn-merge").disabled = true;
             document.getElementById("btn-delete").disabled = true;
             document.getElementById("btn-reset-taxonomy").disabled = true;
             return;
@@ -235,6 +237,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("btn-complement").disabled = (count < 1);
         document.getElementById("btn-union").disabled = (count < 2);
         document.getElementById("btn-intersection").disabled = (count < 2);
+        document.getElementById("btn-find-intersections").disabled = (count < 2);
+        document.getElementById("btn-merge").disabled = (count < 2);
         document.getElementById("btn-reset-taxonomy").disabled = false;
 
         // Don't allow deleting root
@@ -299,6 +303,9 @@ document.addEventListener("DOMContentLoaded", function () {
             case "wsom":
                 label = "WSOM discovery from " + sourceNames.join(", ");
                 break;
+            case "merge":
+                label = "Merge of " + sourceNames.join(", ");
+                break;
             default:
                 label = node.origin;
         }
@@ -306,26 +313,31 @@ document.addEventListener("DOMContentLoaded", function () {
         return '<div class="detail-origin"><h4>Origin</h4><p>' + label + '</p></div>';
     }
 
+    var detailAvailableRestrictions = null;
+
     function showConceptDetail(conceptId) {
         var node = findNode(conceptId);
         if (!node) return;
-
-        var restrictionsHtml = "";
-        if (node.restrictions && node.restrictions.length > 0) {
-            restrictionsHtml = '<div class="detail-restrictions"><h4>Restrictions</h4><ul>';
-            node.restrictions.forEach(function (r) {
-                restrictionsHtml += "<li><strong>" + escapeHtml(r.column) +
-                    "</strong> " + escapeHtml(r.operator) +
-                    " " + escapeHtml(String(r.value)) + "</li>";
-            });
-            restrictionsHtml += "</ul></div>";
-        }
 
         var coveragePct = (node.coverage * 100).toFixed(1);
         var coverageClass = node.child_ids.length === 0 ? "" :
             (node.coverage >= 1.0 ? "coverage-full" : "coverage-partial");
 
         var originHtml = buildOriginDescription(node);
+        var isRoot = (node.origin === "root");
+
+        var restrictionsHtml = "";
+        if (!isRoot) {
+            restrictionsHtml =
+                '<div class="detail-restrictions">' +
+                '  <h4>Restrictions</h4>' +
+                '  <div id="detail-restrictions-builder"><span class="text-muted">Loading...</span></div>' +
+                '  <div class="detail-restrictions-actions">' +
+                '    <button class="btn btn-secondary btn-sm" id="btn-detail-add-restriction">+ Add</button>' +
+                '    <button class="btn btn-primary btn-sm" id="btn-detail-save-restrictions">Save</button>' +
+                '  </div>' +
+                '</div>';
+        }
 
         var html =
             '<div class="detail-content">' +
@@ -350,6 +362,61 @@ document.addEventListener("DOMContentLoaded", function () {
         nameInput.addEventListener("keydown", function (e) {
             if (e.key === "Enter") this.blur();
         });
+
+        // Load editable restrictions for non-root concepts
+        if (!isRoot && node.parent_ids && node.parent_ids.length > 0) {
+            var parentId = node.parent_ids[0];
+            fetch("/taxonomy/api/concept/" + encodeURIComponent(parentId) + "/restrictions")
+                .then(function (r) { return r.json(); })
+                .then(function (data) {
+                    if (data.error) return;
+                    detailAvailableRestrictions = data.available;
+                    var builder = document.getElementById("detail-restrictions-builder");
+                    if (!builder) return;
+                    builder.innerHTML = "";
+
+                    var currentRestrictions = node.restrictions || [];
+                    if (currentRestrictions.length === 0) {
+                        buildRestrictionRow(builder, detailAvailableRestrictions);
+                    } else {
+                        currentRestrictions.forEach(function (r) {
+                            buildRestrictionRow(builder, detailAvailableRestrictions, r);
+                        });
+                    }
+
+                    var addBtn = document.getElementById("btn-detail-add-restriction");
+                    if (addBtn) {
+                        addBtn.addEventListener("click", function () {
+                            var b = document.getElementById("detail-restrictions-builder");
+                            if (b) buildRestrictionRow(b, detailAvailableRestrictions);
+                        });
+                    }
+                    var saveBtn = document.getElementById("btn-detail-save-restrictions");
+                    if (saveBtn) {
+                        saveBtn.addEventListener("click", function () {
+                            saveConceptRestrictions(conceptId);
+                        });
+                    }
+                });
+        }
+    }
+
+    function saveConceptRestrictions(conceptId) {
+        var builder = document.getElementById("detail-restrictions-builder");
+        if (!builder) return;
+        var restrictions = collectRestrictions(builder);
+
+        fetch("/taxonomy/api/concept/" + encodeURIComponent(conceptId), {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ restrictions: restrictions }),
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (data.error) { alert("Error: " + data.error); return; }
+                taxonomyData = data;
+                renderGraph(data);
+            });
     }
 
     function findNode(conceptId) {
@@ -398,9 +465,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
 
-    // -- Restriction builder -------------------------------------------------
-    function addRestrictionRow() {
-        var builder = document.getElementById("restrictions-builder");
+    // -- Restriction builder (generic) ----------------------------------------
+    function buildRestrictionRow(container, available, initial) {
         var rowDiv = document.createElement("div");
         rowDiv.className = "restriction-row";
 
@@ -411,7 +477,7 @@ document.addEventListener("DOMContentLoaded", function () {
         defaultOpt.value = "";
         defaultOpt.textContent = "-- Column --";
         colSelect.appendChild(defaultOpt);
-        availableRestrictions.forEach(function (col) {
+        available.forEach(function (col) {
             var opt = document.createElement("option");
             opt.value = col.column;
             opt.textContent = col.column + " (" + col.type + ")";
@@ -438,15 +504,15 @@ document.addEventListener("DOMContentLoaded", function () {
         rowDiv.appendChild(opSelect);
         rowDiv.appendChild(valueContainer);
         rowDiv.appendChild(removeBtn);
-        builder.appendChild(rowDiv);
+        container.appendChild(rowDiv);
 
         // On column change
         colSelect.addEventListener("change", function () {
             var colName = this.value;
             var colInfo = null;
-            for (var i = 0; i < availableRestrictions.length; i++) {
-                if (availableRestrictions[i].column === colName) {
-                    colInfo = availableRestrictions[i];
+            for (var i = 0; i < available.length; i++) {
+                if (available[i].column === colName) {
+                    colInfo = available[i];
                     break;
                 }
             }
@@ -495,20 +561,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 valueContainer.appendChild(valInput);
             }
         });
+
+        // Pre-populate if initial values provided
+        if (initial) {
+            colSelect.value = initial.column;
+            colSelect.dispatchEvent(new Event("change"));
+            opSelect.value = initial.operator;
+            var valEl = valueContainer.querySelector(".restriction-val");
+            if (valEl) {
+                valEl.value = String(initial.value);
+            }
+        }
     }
 
-    document.getElementById("btn-add-restriction-row").addEventListener("click", function () {
-        addRestrictionRow();
-    });
-
-    // -- Confirm add subconcept ----------------------------------------------
-    document.getElementById("btn-confirm-subconcept").addEventListener("click", function () {
-        var modal = document.getElementById("modal-add-subconcept");
-        var parentId = modal.dataset.parentId;
-        var name = document.getElementById("subconcept-name").value.trim();
+    function collectRestrictions(container) {
         var restrictions = [];
-
-        var rows = document.querySelectorAll("#restrictions-builder .restriction-row");
+        var rows = container.querySelectorAll(".restriction-row");
         for (var i = 0; i < rows.length; i++) {
             var row = rows[i];
             var col = row.querySelector(".restriction-col").value;
@@ -520,6 +588,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 restrictions.push({ column: col, operator: op, value: val });
             }
         }
+        return restrictions;
+    }
+
+    // -- Add Subconcept modal restriction rows --------------------------------
+    function addRestrictionRow() {
+        var builder = document.getElementById("restrictions-builder");
+        buildRestrictionRow(builder, availableRestrictions);
+    }
+
+    document.getElementById("btn-add-restriction-row").addEventListener("click", function () {
+        addRestrictionRow();
+    });
+
+    // -- Confirm add subconcept ----------------------------------------------
+    document.getElementById("btn-confirm-subconcept").addEventListener("click", function () {
+        var modal = document.getElementById("modal-add-subconcept");
+        var parentId = modal.dataset.parentId;
+        var name = document.getElementById("subconcept-name").value.trim();
+        var restrictions = collectRestrictions(document.getElementById("restrictions-builder"));
 
         if (restrictions.length === 0) {
             alert("Add at least one restriction.");
@@ -588,6 +675,38 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 
+    // -- Find Intersections --------------------------------------------------
+    document.getElementById("btn-find-intersections").addEventListener("click", function () {
+        var ids = Array.from(selectedNodes);
+        fetch("/taxonomy/api/find-intersections", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ concept_ids: ids }),
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (data.error) { alert(data.error); return; }
+                taxonomyData = data;
+                selectedNodes.clear();
+                renderGraph(data);
+            });
+    });
+
+    // -- Merge ---------------------------------------------------------------
+    document.getElementById("btn-merge").addEventListener("click", function () {
+        var ids = Array.from(selectedNodes);
+        fetch("/taxonomy/api/merge", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ concept_ids: ids }),
+        })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (data.error) { alert("Error: " + data.error); return; }
+                selectNewConcept(data);
+            });
+    });
+
     // -- Delete --------------------------------------------------------------
     document.getElementById("btn-delete").addEventListener("click", function () {
         var ids = Array.from(selectedNodes);
@@ -632,6 +751,33 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("btn-find-subconcepts").addEventListener("click", function () {
         if (selectedNodes.size !== 1) return;
         wsomParentId = Array.from(selectedNodes)[0];
+
+        // Set default epochs based on concept size
+        var conceptNode = taxonomyData && taxonomyData.nodes.find(function (n) { return n.id === wsomParentId; });
+        if (conceptNode && conceptNode.size > 0) {
+            var defaultEpochs = Math.max(1, Math.min(5000, Math.round(250000 / conceptNode.size)));
+            document.getElementById("wsom-epochs").value = defaultEpochs;
+        }
+
+        // Populate column checkboxes
+        var container = document.getElementById("wsom-ignore-columns");
+        container.innerHTML = '<span class="text-muted">Loading columns...</span>';
+        fetch("/taxonomy/api/columns")
+            .then(function (r) { return r.json(); })
+            .then(function (columns) {
+                container.innerHTML = "";
+                columns.forEach(function (col) {
+                    var label = document.createElement("label");
+                    label.className = "wsom-column-checkbox";
+                    var cb = document.createElement("input");
+                    cb.type = "checkbox";
+                    cb.value = col.name;
+                    label.appendChild(cb);
+                    label.appendChild(document.createTextNode(" " + col.name + " (" + col.type + ")"));
+                    container.appendChild(label);
+                });
+            });
+
         document.getElementById("modal-wsom-params").hidden = false;
     });
 
@@ -639,6 +785,11 @@ document.addEventListener("DOMContentLoaded", function () {
         var mapSize = parseInt(document.getElementById("wsom-map-size").value, 10);
         var sparcity = parseFloat(document.getElementById("wsom-sparcity").value);
         var epochs = parseInt(document.getElementById("wsom-epochs").value, 10);
+
+        var ignoreColumns = [];
+        document.querySelectorAll("#wsom-ignore-columns input:checked").forEach(function (cb) {
+            ignoreColumns.push(cb.value);
+        });
 
         document.getElementById("modal-wsom-params").hidden = true;
         document.getElementById("wsom-progress-overlay").hidden = false;
@@ -653,6 +804,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 map_size: mapSize,
                 sparcity_coeff: sparcity,
                 n_epochs: epochs,
+                ignore_columns: ignoreColumns,
             }),
         })
             .then(function (r) { return r.json(); })
