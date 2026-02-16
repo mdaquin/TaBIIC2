@@ -849,6 +849,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         selectedNodes.clear();
                         renderGraph(data.graph);
                         document.getElementById("wsom-validation-bar").hidden = false;
+                        if (cy) cy.resize();
                         updateToolbarState();
                     } else if (data.status === "error") {
                         clearInterval(wsomPollingInterval);
@@ -895,6 +896,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 taxonomyData = data;
                 selectedNodes.clear();
                 renderGraph(data);
+                if (cy) cy.resize();
                 updateToolbarState();
 
                 if (action === "retry" && data.retry_parent_id) {
