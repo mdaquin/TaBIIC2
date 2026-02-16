@@ -497,6 +497,7 @@ def wsom_start():
     map_size = int(data.get("map_size", 5))
     sparcity_coeff = float(data.get("sparcity_coeff", 0.01))
     n_epochs = int(data.get("n_epochs", 100))
+    merge_f1_threshold = float(data.get("merge_f1_threshold", 0.05))
     ignore_columns = data.get("ignore_columns", [])
 
     if concept_id not in app_state.taxonomy["concepts"]:
@@ -509,8 +510,8 @@ def wsom_start():
     if map_size < 2 or map_size > 20:
         return jsonify({"error": "Map size must be between 2 and 20"}), 400
 
-    if n_epochs < 1 or n_epochs > 5000:
-        return jsonify({"error": "Epochs must be between 1 and 5000"}), 400
+    if n_epochs < 5 or n_epochs > 5000:
+        return jsonify({"error": "Epochs must be between 5 and 5000"}), 400
 
     app_state.reset_wsom()
     app_state.wsom_training = True
@@ -519,7 +520,7 @@ def wsom_start():
 
     thread = threading.Thread(
         target=run_wsom_training,
-        args=(app_state, concept_id, map_size, sparcity_coeff, n_epochs, ignore_columns),
+        args=(app_state, concept_id, map_size, sparcity_coeff, n_epochs, ignore_columns, merge_f1_threshold),
         daemon=True,
     )
     app_state.wsom_thread = thread

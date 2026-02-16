@@ -755,7 +755,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Set default epochs based on concept size
         var conceptNode = taxonomyData && taxonomyData.nodes.find(function (n) { return n.id === wsomParentId; });
         if (conceptNode && conceptNode.size > 0) {
-            var defaultEpochs = Math.max(1, Math.min(5000, Math.round(250000 / conceptNode.size)));
+            var defaultEpochs = Math.max(5, Math.min(5000, Math.round(250000 / conceptNode.size)));
             document.getElementById("wsom-epochs").value = defaultEpochs;
         }
 
@@ -785,6 +785,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var mapSize = parseInt(document.getElementById("wsom-map-size").value, 10);
         var sparcity = parseFloat(document.getElementById("wsom-sparcity").value);
         var epochs = parseInt(document.getElementById("wsom-epochs").value, 10);
+        var mergeThreshold = parseFloat(document.getElementById("wsom-merge-threshold").value) / 100;
 
         var ignoreColumns = [];
         document.querySelectorAll("#wsom-ignore-columns input:checked").forEach(function (cb) {
@@ -804,6 +805,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 map_size: mapSize,
                 sparcity_coeff: sparcity,
                 n_epochs: epochs,
+                merge_f1_threshold: mergeThreshold,
                 ignore_columns: ignoreColumns,
             }),
         })

@@ -16,7 +16,7 @@ N_BATCHES = 10
 
 # -- Entry point (runs in background thread) ---------------------------------
 
-def run_wsom_training(app_state, parent_id, map_size, sparcity_coeff, n_epochs, ignore_columns=None):
+def run_wsom_training(app_state, parent_id, map_size, sparcity_coeff, n_epochs, ignore_columns=None, merge_f1_threshold=0.05):
     """Train a WSOM on a concept's rows and create proposed subconcepts."""
     try:
         concept = app_state.taxonomy["concepts"][parent_id]
@@ -74,10 +74,6 @@ def run_wsom_training(app_state, parent_id, map_size, sparcity_coeff, n_epochs, 
                 total_dist += dist * len(batch)
                 total_count += count
                 total_loss += loss * len(batch)
-                logger.info(
-                    "    ... dist=%.4f  count=%d  loss=%.4f",
-                    dist, count, loss,
-                )
             total_dist /= n_samples
             total_loss /= n_samples
             app_state.wsom_progress = epoch + 1
@@ -124,17 +120,24 @@ def run_wsom_training(app_state, parent_id, map_size, sparcity_coeff, n_epochs, 
 
             cluster_results[key] = result
             if result:
-                restrictions, prec, matching = result
+                restrictions, f1, matching = result
                 desc = "  ".join(
                     "%s %s %s" % (r["column"], r["operator"], r["value"])
                     for r in restrictions
                 )
                 logger.info(
-                    "Cluster %s  len=%d  best: %s  precision=%.4f  support=%d",
-                    str(key), len(indices), desc, prec, len(matching),
+                    "Cluster %s  len=%d  best: %s  f1=%.4f  support=%d",
+                    str(key), len(indices), desc, f1, len(matching),
                 )
             else:
                 logger.info("Cluster %s  len=%d  no restriction found", str(key), len(indices))
+
+        # 7.5. Merge similar clusters if a better restriction covers both
+        cluster_results = _merge_similar_clusters(
+            cluster_results, clusters, wsom,
+            best_col, best_col_type, parent_subset,
+            merge_f1_threshold,
+        )
 
         # 8. Deduplicate clusters with identical restrictions
         merged = _deduplicate_restrictions(cluster_results)
@@ -260,42 +263,44 @@ def _select_best_column(wsom, encoded_df, column_meta, ignore_columns=None):
     return best_col, best_type
 
 
-# -- Cluster characterisation (precision-based, single column) ----------------
+# -- Cluster characterisation (F1-based, single column) ----------------------
 
-def _precision(matching_indices, cluster_set):
-    """Compute precision of a restriction's matching rows vs cluster membership."""
+def _f1_score(matching_indices, cluster_set):
+    """Compute F1 score of a restriction's matching rows vs cluster membership."""
     tp = len(matching_indices & cluster_set)
     if tp == 0:
         return 0.0
     fp = len(matching_indices - cluster_set)
-    return tp / (tp + fp)
-
+    fn = len(cluster_set - matching_indices)
+    precision = tp / (tp + fp)
+    recall = tp / (tp + fn)
+    return 2 * precision * recall / (precision + recall)
 
 def _best_categorical(col_name, parent_df, cluster_set):
-    """Find the categorical value whose = restriction has highest precision."""
+    """Find the categorical value whose = restriction has highest F1 score."""
     col = parent_df[col_name].dropna()
     if len(col) == 0:
         return None
 
-    best_prec = 0.0
+    best_f1 = 0.0
     best_restrictions = None
     best_matching = None
 
     for value in col.unique():
         matching = set(col[col == value].index)
-        prec = _precision(matching, cluster_set)
-        if prec > best_prec:
-            best_prec = prec
+        f1 = _f1_score(matching, cluster_set)
+        if f1 > best_f1:
+            best_f1 = f1
             best_restrictions = [{"column": col_name, "operator": "=", "value": str(value)}]
             best_matching = matching
 
     if best_restrictions:
-        return best_restrictions, best_prec, best_matching
+        return best_restrictions, best_f1, best_matching
     return None
 
 
 def _best_numeric(col_name, parent_df, cluster_set):
-    """Find the best numeric interval (or single bound) with highest precision.
+    """Find the best numeric interval (or single bound) with highest F1 score.
 
     Explores all pairs of 5%-quantile thresholds as [lower, upper) intervals,
     plus open-ended single bounds (>= or <).
@@ -309,23 +314,23 @@ def _best_numeric(col_name, parent_df, cluster_set):
         for pct in range(5, 100, 5)
     ))
 
-    best_prec = 0.0
+    best_f1 = 0.0
     best_restrictions = None
     best_matching = None
 
     # Try single bounds
     for t in thresholds:
         matching = set(col[col >= t].index)
-        prec = _precision(matching, cluster_set)
-        if prec > best_prec:
-            best_prec = prec
+        f1 = _f1_score(matching, cluster_set)
+        if f1 > best_f1:
+            best_f1 = f1
             best_restrictions = [{"column": col_name, "operator": ">=", "value": t}]
             best_matching = matching
 
         matching = set(col[col < t].index)
-        prec = _precision(matching, cluster_set)
-        if prec > best_prec:
-            best_prec = prec
+        f1 = _f1_score(matching, cluster_set)
+        if f1 > best_f1:
+            best_f1 = f1
             best_restrictions = [{"column": col_name, "operator": "<", "value": t}]
             best_matching = matching
 
@@ -334,9 +339,9 @@ def _best_numeric(col_name, parent_df, cluster_set):
         for j in range(i + 1, len(thresholds)):
             lower, upper = thresholds[i], thresholds[j]
             matching = set(col[(col >= lower) & (col < upper)].index)
-            prec = _precision(matching, cluster_set)
-            if prec > best_prec:
-                best_prec = prec
+            f1 = _f1_score(matching, cluster_set)
+            if f1 > best_f1:
+                best_f1 = f1
                 best_restrictions = [
                     {"column": col_name, "operator": ">=", "value": lower},
                     {"column": col_name, "operator": "<", "value": upper},
@@ -344,17 +349,17 @@ def _best_numeric(col_name, parent_df, cluster_set):
                 best_matching = matching
 
     if best_restrictions:
-        return best_restrictions, best_prec, best_matching
+        return best_restrictions, best_f1, best_matching
     return None
 
 
 def _best_date(col_name, parent_df, cluster_set):
-    """Find the decile date split (>= or <) with highest precision."""
+    """Find the decile date split (>= or <) with highest F1 score."""
     col = pd.to_datetime(parent_df[col_name], errors="coerce", format="mixed").dropna()
     if len(col) < 2:
         return None
 
-    best_prec = 0.0
+    best_f1 = 0.0
     best_restrictions = None
     best_matching = None
 
@@ -363,22 +368,175 @@ def _best_date(col_name, parent_df, cluster_set):
         date_str = str(threshold.date())
 
         matching = set(col[col >= threshold].index)
-        prec = _precision(matching, cluster_set)
-        if prec > best_prec:
-            best_prec = prec
+        f1 = _f1_score(matching, cluster_set)
+        if f1 > best_f1:
+            best_f1 = f1
             best_restrictions = [{"column": col_name, "operator": ">=", "value": date_str}]
             best_matching = matching
 
         matching = set(col[col < threshold].index)
-        prec = _precision(matching, cluster_set)
-        if prec > best_prec:
-            best_prec = prec
+        f1 = _f1_score(matching, cluster_set)
+        if f1 > best_f1:
+            best_f1 = f1
             best_restrictions = [{"column": col_name, "operator": "<", "value": date_str}]
             best_matching = matching
 
     if best_restrictions:
-        return best_restrictions, best_prec, best_matching
+        return best_restrictions, best_f1, best_matching
     return None
+
+
+# -- Cluster characterisation helper ------------------------------------------
+
+def _characterize_cluster(col_name, col_type, parent_df, cluster_set):
+    """Find the best restriction for a cluster on a given column."""
+    if col_type == "categorical":
+        return _best_categorical(col_name, parent_df, cluster_set)
+    elif col_type == "numeric":
+        return _best_numeric(col_name, parent_df, cluster_set)
+    elif col_type == "date":
+        return _best_date(col_name, parent_df, cluster_set)
+    return None
+
+
+# -- Similarity-based cluster merging ----------------------------------------
+
+def _cosine_sim(a, b):
+    """Cosine similarity between two numpy vectors."""
+    dot = np.dot(a, b)
+    na = np.linalg.norm(a)
+    nb = np.linalg.norm(b)
+    if na == 0 or nb == 0:
+        return 0.0
+    return float(dot / (na * nb))
+
+
+def _merge_similar_clusters(cluster_results, clusters, wsom,
+                            best_col, best_col_type, parent_subset,
+                            merge_f1_threshold=0.05):
+    """Merge pairs of clusters when a better restriction exists for their union.
+
+    Starting from the most similar pair (by WSOM somap centroid cosine
+    similarity), merge two clusters if the best restriction for the combined
+    rows has an F1 score exceeding both individual F1s by at least
+    ``merge_f1_threshold`` (as a fraction, e.g. 0.05 = 5%).
+    The merged cluster's centroid is the mean of its constituents and is
+    eligible for further merging.
+
+    Returns an updated cluster_results dict.
+    """
+    # Build items indexed by auto-incrementing ID
+    items = {}
+    next_id = 0
+    for key, result in cluster_results.items():
+        if result is None:
+            continue
+        x, y = key
+        neuron_idx = x * wsom.ys + y
+        centroid = wsom.somap[neuron_idx].detach().cpu().numpy().copy()
+        items[next_id] = {
+            "centroid": centroid,
+            "row_indices": set(clusters[key]),
+            "result": result,
+        }
+        next_id += 1
+
+    if len(items) < 2:
+        return cluster_results
+
+    tried_pairs = set()
+
+    changed = True
+    while changed:
+        changed = False
+
+        # Build all untried pairs sorted by cosine similarity (descending)
+        pairs = []
+        ids = list(items.keys())
+        for i in range(len(ids)):
+            for j in range(i + 1, len(ids)):
+                pair_key = (min(ids[i], ids[j]), max(ids[i], ids[j]))
+                if pair_key in tried_pairs:
+                    continue
+                sim = _cosine_sim(items[ids[i]]["centroid"],
+                                  items[ids[j]]["centroid"])
+                pairs.append((sim, ids[i], ids[j]))
+
+        pairs.sort(reverse=True)
+
+        for _sim, id_a, id_b in pairs:
+            if id_a not in items or id_b not in items:
+                continue
+
+            item_a = items[id_a]
+            item_b = items[id_b]
+
+            merged_rows = item_a["row_indices"] | item_b["row_indices"]
+            merged_result = _characterize_cluster(
+                best_col, best_col_type, parent_subset, merged_rows
+            )
+
+            if merged_result is None:
+                tried_pairs.add((min(id_a, id_b), max(id_a, id_b)))
+                continue
+
+            _, merged_f1, _ = merged_result
+            _, f1_a, _ = item_a["result"]
+            _, f1_b, _ = item_b["result"]
+
+            if (merged_f1 >= f1_a + merge_f1_threshold
+                    and merged_f1 >= f1_b + merge_f1_threshold):
+                new_centroid = (item_a["centroid"] + item_b["centroid"]) / 2.0
+                new_id = next_id
+                next_id += 1
+                items[new_id] = {
+                    "centroid": new_centroid,
+                    "row_indices": merged_rows,
+                    "result": merged_result,
+                }
+                del items[id_a]
+                del items[id_b]
+                changed = True
+
+                restrictions_a, _, matching_a = item_a["result"]
+                desc_a = "  ".join(
+                    "%s %s %s" % (r["column"], r["operator"], r["value"])
+                    for r in restrictions_a
+                )
+                restrictions_b, _, matching_b = item_b["result"]
+                desc_b = "  ".join(
+                    "%s %s %s" % (r["column"], r["operator"], r["value"])
+                    for r in restrictions_b
+                )
+                restrictions, _, matching = merged_result
+                desc = "  ".join(
+                    "%s %s %s" % (r["column"], r["operator"], r["value"])
+                    for r in restrictions
+                )
+                logger.info(
+                    "Merged clusters:\n"
+                    "  Cluster A: [%s] f1=%.4f support=%d\n"
+                    "  Cluster B: [%s] f1=%.4f support=%d\n"
+                    "  Result:    [%s] f1=%.4f support=%d",
+                    desc_a, f1_a, len(matching_a),
+                    desc_b, f1_b, len(matching_b),
+                    desc, merged_f1, len(matching),
+                )
+                break  # restart with recomputed pairs
+            else:
+                tried_pairs.add((min(id_a, id_b), max(id_a, id_b)))
+
+    # Rebuild cluster_results dict with synthetic keys
+    new_results = {}
+    for item_id, item in items.items():
+        new_results[("merged", item_id)] = item["result"]
+
+    # Carry over clusters that had no result (None)
+    for key, result in cluster_results.items():
+        if result is None:
+            new_results[key] = None
+
+    return new_results
 
 
 # -- Restriction deduplication and subset removal -----------------------------
