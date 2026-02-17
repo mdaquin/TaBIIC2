@@ -23,6 +23,7 @@
             <button class="btn btn-secondary" id="btn-merge" disabled>Merge</button>
             <button class="btn btn-secondary" id="btn-delete" disabled>Delete</button>
             <button class="btn btn-secondary" id="btn-reset-taxonomy">Reset</button>
+            <button class="btn btn-secondary" id="btn-export-rdf" disabled>Export RDF</button>
         </div>
     </div>
 
@@ -121,6 +122,34 @@
         </div>
     </div>
 
+    <!-- Modal: Export RDF -->
+    <div class="modal-overlay" id="modal-export-rdf" hidden>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Export as RDF/OWL</h3>
+                <button class="modal-close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Concept namespace URI:</label>
+                    <input type="text" id="rdf-concept-ns" class="form-input"
+                           placeholder="http://example.org/ontology#">
+                    <small class="text-muted">Base URI for OWL classes and properties</small>
+                </div>
+                <div class="form-group">
+                    <label>Entity namespace URI:</label>
+                    <input type="text" id="rdf-entity-ns" class="form-input"
+                           placeholder="http://example.org/data/">
+                    <small class="text-muted">Base URI for individuals (data rows)</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" id="btn-confirm-export-rdf">Download .ttl</button>
+            </div>
+        </div>
+    </div>
+
     {% endif %}
 </div>
 {% endblock %}
@@ -130,6 +159,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
+<script>var uploadedFilename = "{{ filename|default('data', true) }}";</script>
 <script src="{{ url_for('static', filename='js/taxonomy_tab.js') }}"></script>
 {% endif %}
 {% endblock %}

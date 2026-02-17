@@ -228,6 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("btn-merge").disabled = true;
             document.getElementById("btn-delete").disabled = true;
             document.getElementById("btn-reset-taxonomy").disabled = true;
+            document.getElementById("btn-export-rdf").disabled = true;
             return;
         }
 
@@ -249,6 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
         document.getElementById("btn-delete").disabled = !canDelete;
+        document.getElementById("btn-export-rdf").disabled = !taxonomyData;
     }
 
     // -- Detail panel --------------------------------------------------------
@@ -908,6 +910,66 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
     }
+
+    // -- Export RDF ----------------------------------------------------------
+    document.getElementById("btn-export-rdf").addEventListener("click", function () {
+        var stem = "data";
+        if (typeof uploadedFilename === "string" && uploadedFilename) {
+            stem = uploadedFilename.replace(/\.[^/.]+$/, "");
+        }
+        document.getElementById("rdf-concept-ns").value =
+            "http://example.org/" + encodeURIComponent(stem) + "/schema#";
+        document.getElementById("rdf-entity-ns").value =
+            "http://example.org/" + encodeURIComponent(stem) + "/data/";
+        document.getElementById("modal-export-rdf").hidden = false;
+    });
+
+    document.getElementById("btn-confirm-export-rdf").addEventListener("click", function () {
+        var conceptNs = document.getElementById("rdf-concept-ns").value.trim();
+        var entityNs = document.getElementById("rdf-entity-ns").value.trim();
+        if (!conceptNs || !entityNs) {
+            alert("Please provide both namespace URIs.");
+            return;
+        }
+
+        var btn = document.getElementById("btn-confirm-export-rdf");
+        btn.disabled = true;
+        btn.textContent = "Exporting...";
+
+        fetch("/taxonomy/api/export-rdf", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                concept_namespace: conceptNs,
+                entity_namespace: entityNs,
+            }),
+        })
+            .then(function (r) {
+                if (!r.ok) throw new Error("Export failed: " + r.statusText);
+                return r.blob();
+            })
+            .then(function (blob) {
+                var stem = "taxonomy";
+                if (typeof uploadedFilename === "string" && uploadedFilename) {
+                    stem = uploadedFilename.replace(/\.[^/.]+$/, "");
+                }
+                var a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = stem + ".ttl";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(a.href);
+                document.getElementById("modal-export-rdf").hidden = true;
+            })
+            .catch(function (err) {
+                alert("Export error: " + err.message);
+            })
+            .finally(function () {
+                btn.disabled = false;
+                btn.textContent = "Download .ttl";
+            });
+    });
 
     // -- Modal close ---------------------------------------------------------
     document.querySelectorAll("[data-dismiss='modal']").forEach(function (btn) {

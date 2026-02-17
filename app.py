@@ -3,7 +3,7 @@ import threading
 
 logging.basicConfig(level=logging.INFO)
 
-from flask import Flask, render_template, request, jsonify, redirect, url_for, flash
+from flask import Flask, render_template, request, jsonify, redirect, url_for, flash, Response
 from markupsafe import Markup
 import config
 from state import app_state
@@ -15,6 +15,7 @@ from taxonomy import (
     update_restrictions, serialize_taxonomy, get_available_restrictions,
 )
 from wsom_discovery import run_wsom_training
+from rdf_export import export_taxonomy_as_turtle
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -580,6 +581,41 @@ def wsom_resolve():
         return jsonify(result)
 
     return jsonify({"error": "Invalid action"}), 400
+
+
+@app.route("/taxonomy/api/export-rdf", methods=["POST"])
+def export_rdf():
+    if app_state.taxonomy is None:
+        return jsonify({"error": "No taxonomy initialized"}), 400
+
+    data = request.get_json()
+    concept_ns = data.get("concept_namespace", "").strip()
+    entity_ns = data.get("entity_namespace", "").strip()
+
+    if not concept_ns:
+        return jsonify({"error": "Concept namespace URI is required"}), 400
+    if not entity_ns:
+        return jsonify({"error": "Entity namespace URI is required"}), 400
+
+    try:
+        turtle_str = export_taxonomy_as_turtle(
+            app_state.taxonomy,
+            app_state.raw_df,
+            app_state.column_meta,
+            concept_ns,
+            entity_ns,
+        )
+    except Exception as e:
+        return jsonify({"error": f"Export failed: {e}"}), 500
+
+    base = app_state.filename.rsplit(".", 1)[0] if app_state.filename else "taxonomy"
+    filename = f"{base}.ttl"
+
+    return Response(
+        turtle_str,
+        mimetype="text/turtle",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
 
 
 if __name__ == "__main__":
