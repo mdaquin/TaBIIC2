@@ -1,4 +1,4 @@
-# Taxonomy Building Through Iterative and Interactive Clustering
+# TaBIIC2 - Taxonomy Building Through Iterative and Interactive Clustering
 
 A web application for interactively building taxonomies from tabular data. Upload a CSV, Excel, or JSON file, inspect and configure your columns, then construct a hierarchy of concepts — each representing a subset of rows defined by restrictions on column values. Concepts can be created manually or discovered automatically using a Weighted Self-Organizing Map (WSOM).
 
