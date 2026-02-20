@@ -73,7 +73,7 @@ def export_taxonomy_as_turtle(taxonomy, raw_df, column_meta,
             row_concepts.setdefault(idx, []).append(cid)
 
     for idx in raw_df.index:
-        ind_uri = ENS[f"row_{idx}"]
+        ind_uri = ENS[f"entity_{idx}"]
         g.add((ind_uri, RDF.type, OWL.NamedIndividual))
 
         for cid in row_concepts.get(idx, []):
