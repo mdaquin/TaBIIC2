@@ -28,21 +28,36 @@ def export_taxonomy_as_turtle(taxonomy, raw_df, column_meta,
     # 1. Name map for all concepts
     name_map = _build_name_map(concepts)
 
-    # 2. Properties (one per included column)
-    included_cols = column_meta[column_meta["include"] == True]
+    # 2. Properties (one per column)
     prop_map = {}
-    for col_name in included_cols.index:
+    for col_name in column_meta.index:
         safe = _safe_local_name(col_name)
         prop_uri = CNS[safe]
         prop_map[col_name] = prop_uri
-        g.add((prop_uri, RDF.type, OWL.DatatypeProperty))
-        col_type = included_cols.at[col_name, "user_type"]
-        if col_type == "numeric":
-            g.add((prop_uri, RDFS.range, XSD.decimal))
-        elif col_type == "date":
-            g.add((prop_uri, RDFS.range, XSD.date))
+        col_type = column_meta.at[col_name, "user_type"]
+        if col_type == "categorical":
+            g.add((prop_uri, RDF.type, OWL.ObjectProperty))
         else:
-            g.add((prop_uri, RDFS.range, XSD.string))
+            g.add((prop_uri, RDF.type, OWL.DatatypeProperty))
+            if col_type == "numeric":
+                g.add((prop_uri, RDFS.range, XSD.decimal))
+            elif col_type == "date":
+                g.add((prop_uri, RDFS.range, XSD.date))
+            else:
+                g.add((prop_uri, RDFS.range, XSD.string))
+
+    # 2b. Categorical value individuals (one named individual per unique value)
+    cat_value_map = {}  # (col_name, value_str) -> URIRef
+    for col_name in column_meta.index:
+        if column_meta.at[col_name, "user_type"] != "categorical":
+            continue
+        safe_col = _safe_local_name(col_name)
+        for val_str in raw_df[col_name].dropna().astype(str).unique():
+            safe_val = _safe_local_name(val_str)
+            val_uri = CNS[f"{safe_col}_{safe_val}"]
+            cat_value_map[(col_name, val_str)] = val_uri
+            g.add((val_uri, RDF.type, OWL.NamedIndividual))
+            g.add((val_uri, RDFS.label, Literal(val_str)))
 
     # 3. Classes (one per concept)
     class_map = {}
@@ -64,7 +79,7 @@ def export_taxonomy_as_turtle(taxonomy, raw_df, column_meta,
 
     # 5. owl:equivalentClass axioms
     for cid, concept in concepts.items():
-        _add_equivalent_class(g, concept, class_map, prop_map, column_meta)
+        _add_equivalent_class(g, concept, class_map, prop_map, column_meta, cat_value_map)
 
     # 6. Individuals
     row_concepts = {}
@@ -79,14 +94,19 @@ def export_taxonomy_as_turtle(taxonomy, raw_df, column_meta,
         for cid in row_concepts.get(idx, []):
             g.add((ind_uri, RDF.type, class_map[cid]))
 
-        for col_name in included_cols.index:
+        for col_name in column_meta.index:
             val = raw_df.at[idx, col_name]
             if _is_missing(val):
                 continue
-            col_type = included_cols.at[col_name, "user_type"]
-            literal = _make_literal(val, col_type)
-            if literal is not None:
-                g.add((ind_uri, prop_map[col_name], literal))
+            col_type = column_meta.at[col_name, "user_type"]
+            if col_type == "categorical":
+                val_uri = cat_value_map.get((col_name, str(val)))
+                if val_uri is not None:
+                    g.add((ind_uri, prop_map[col_name], val_uri))
+            else:
+                literal = _make_literal(val, col_type)
+                if literal is not None:
+                    g.add((ind_uri, prop_map[col_name], literal))
 
     return g.serialize(format="turtle")
 
@@ -146,7 +166,7 @@ def _make_literal(val, col_type):
 
 # -- OWL equivalentClass axioms ----------------------------------------------
 
-def _add_equivalent_class(g, concept, class_map, prop_map, column_meta):
+def _add_equivalent_class(g, concept, class_map, prop_map, column_meta, cat_value_map):
     origin = concept["origin"]
     class_uri = class_map[concept["id"]]
 
@@ -154,7 +174,7 @@ def _add_equivalent_class(g, concept, class_map, prop_map, column_meta):
         return
     elif origin in ("restriction", "wsom", "merge"):
         _add_restriction_equivalent(g, concept, class_uri, class_map,
-                                    prop_map, column_meta)
+                                    prop_map, column_meta, cat_value_map)
     elif origin == "complement":
         _add_complement_equivalent(g, concept, class_uri, class_map)
     elif origin == "intersection":
@@ -164,14 +184,14 @@ def _add_equivalent_class(g, concept, class_map, prop_map, column_meta):
 
 
 def _add_restriction_equivalent(g, concept, class_uri, class_map,
-                                prop_map, column_meta):
+                                prop_map, column_meta, cat_value_map):
     """equivalentClass = intersectionOf(parent, OWL restrictions)."""
     if not concept["restrictions"] or not concept["parent_ids"]:
         return
 
     parent_class = class_map[concept["parent_ids"][0]]
     owl_restrictions = _build_owl_restrictions(
-        g, concept["restrictions"], prop_map, column_meta
+        g, concept["restrictions"], prop_map, column_meta, cat_value_map
     )
     if not owl_restrictions:
         return
@@ -250,7 +270,7 @@ def _add_union_equivalent(g, concept, class_uri, class_map):
 
 # -- OWL restriction building ------------------------------------------------
 
-def _build_owl_restrictions(g, restrictions, prop_map, column_meta):
+def _build_owl_restrictions(g, restrictions, prop_map, column_meta, cat_value_map):
     """Convert restriction dicts to OWL Restriction BNodes."""
     by_column = {}
     for r in restrictions:
@@ -266,9 +286,11 @@ def _build_owl_restrictions(g, restrictions, prop_map, column_meta):
 
         if col_type == "categorical":
             for r in col_restrictions:
-                result.append(
-                    _build_has_value_restriction(g, prop_uri, str(r["value"]))
-                )
+                val_uri = cat_value_map.get((col, str(r["value"])))
+                if val_uri is not None:
+                    result.append(
+                        _build_has_value_restriction(g, prop_uri, val_uri)
+                    )
         elif col_type in ("numeric", "date"):
             bnode = _build_datatype_restriction(
                 g, prop_uri, col_restrictions, col_type
@@ -279,11 +301,11 @@ def _build_owl_restrictions(g, restrictions, prop_map, column_meta):
     return result
 
 
-def _build_has_value_restriction(g, prop_uri, value):
+def _build_has_value_restriction(g, prop_uri, value_ref):
     restr = BNode()
     g.add((restr, RDF.type, OWL.Restriction))
     g.add((restr, OWL.onProperty, prop_uri))
-    g.add((restr, OWL.hasValue, Literal(value, datatype=XSD.string)))
+    g.add((restr, OWL.hasValue, value_ref))
     return restr
 
 
