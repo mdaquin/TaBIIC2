@@ -31,32 +31,21 @@
     <div id="columns-container">
         {% for col in columns %}
         <div class="column-card" id="col-card-{{ loop.index0 }}" data-column="{{ col.column_name }}">
-            <div class="column-header">
-                <h3 class="column-name">{{ col.column_name }}</h3>
-                <span class="detected-badge" title="Auto-detected type">{{ col.detected_type }}</span>
-            </div>
-            <div class="column-controls">
-                <div class="control-group">
-                    <label>Type:</label>
-                    <select class="col-type-select" data-column="{{ col.column_name }}">
-                        <option value="numeric" {% if col.user_type == 'numeric' %}selected{% endif %}>Numeric</option>
-                        <option value="categorical" {% if col.user_type == 'categorical' %}selected{% endif %}>Categorical</option>
-                        <option value="date" {% if col.user_type == 'date' %}selected{% endif %}>Date</option>
-                        <option value="title_id" {% if col.user_type == 'title_id' %}selected{% endif %}>Title / ID</option>
-                    </select>
-                </div>
-                <div class="control-group">
-                    <label>
-                        <input type="checkbox" class="col-include-check"
-                               data-column="{{ col.column_name }}"
-                               {% if col.include %}checked{% endif %}>
-                        Include in analysis
-                    </label>
-                </div>
-            </div>
-            <div class="summary-content">
-                {{ render_summary(col.summary, col.user_type) }}
-            </div>
+            <span class="column-name" title="{{ col.column_name }}">{{ col.column_name }}</span>
+            <span class="detected-badge" title="Auto-detected type">{{ col.detected_type }}</span>
+            <select class="col-type-select" data-column="{{ col.column_name }}">
+                <option value="numeric" {% if col.user_type == 'numeric' %}selected{% endif %}>Numeric</option>
+                <option value="categorical" {% if col.user_type == 'categorical' %}selected{% endif %}>Categorical</option>
+                <option value="date" {% if col.user_type == 'date' %}selected{% endif %}>Date</option>
+                <option value="title_id" {% if col.user_type == 'title_id' %}selected{% endif %}>Title / ID</option>
+            </select>
+            <label class="col-include-label">
+                <input type="checkbox" class="col-include-check"
+                       data-column="{{ col.column_name }}"
+                       {% if col.include %}checked{% endif %}>
+                Include
+            </label>
+            <span class="summary-content">{{ render_summary(col.summary, col.user_type) }}</span>
         </div>
         {% endfor %}
     </div>

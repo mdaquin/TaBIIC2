@@ -3,6 +3,7 @@ import threading
 
 logging.basicConfig(level=logging.INFO)
 
+import pandas as pd
 from flask import Flask, render_template, request, jsonify, redirect, url_for, flash, Response
 from markupsafe import Markup
 import config
@@ -24,57 +25,60 @@ app.config.from_object(config)
 # -- Template helper ----------------------------------------------------------
 
 def render_summary(summary, col_type):
-    """Render column summary as HTML. Used as a Jinja global function
-    and also called from the API to return HTML fragments."""
+    """Render column summary as a compact one-line HTML string."""
     if not summary:
         return ""
 
+    sep = " &nbsp;&middot;&nbsp; "
+    parts = []
+
     if col_type == "numeric":
-        rows = []
-        for label, key in [("Mean", "mean"), ("Median", "median"),
-                           ("Std Dev", "std"), ("Min", "min"), ("Max", "max")]:
+        for label, key in [("Mean", "mean"), ("Median", "median"), ("Std", "std")]:
             val = summary.get(key)
-            rows.append(f"<tr><td>{label}</td><td>{val if val is not None else 'N/A'}</td></tr>")
+            if val is not None:
+                parts.append(f"{label}: {val}")
+        mn, mx = summary.get("min"), summary.get("max")
+        if mn is not None and mx is not None:
+            parts.append(f"Range: {mn}\u2013{mx}")
         missing = summary.get("missing", 0)
-        rows.append(f"<tr><td>Missing</td><td>{missing}</td></tr>")
-        return Markup(f'<table class="summary-table">{"".join(rows)}</table>')
+        if missing:
+            parts.append(f"Missing: {missing}")
+        return Markup(sep.join(parts))
 
     if col_type == "categorical":
         unique = summary.get("unique", 0)
         missing = summary.get("missing", 0)
-        html = f"<p>{unique} unique values, {missing} missing</p>"
+        parts.append(f"{unique} unique")
         top = summary.get("top_values", [])
         if top:
-            items = "".join(
-                f"<tr><td>{v['value']}</td><td>{v['count']}</td></tr>" for v in top
-            )
-            html += f'<table class="summary-table"><tr><th>Value</th><th>Count</th></tr>{items}</table>'
-        return Markup(html)
+            parts.append(", ".join(
+                f"\u201c{v['value']}\u201d ({v['count']})" for v in top[:5]
+            ))
+        if missing:
+            parts.append(f"Missing: {missing}")
+        return Markup(sep.join(parts))
 
     if col_type == "date":
-        missing = summary.get("missing", 0)
         mn = summary.get("min", "N/A")
         mx = summary.get("max", "N/A")
         rng = summary.get("range_days")
-        rng_str = f"{rng} days" if rng is not None else "N/A"
-        return Markup(
-            f'<table class="summary-table">'
-            f"<tr><td>Min</td><td>{mn}</td></tr>"
-            f"<tr><td>Max</td><td>{mx}</td></tr>"
-            f"<tr><td>Range</td><td>{rng_str}</td></tr>"
-            f"<tr><td>Missing</td><td>{missing}</td></tr>"
-            f"</table>"
-        )
+        rng_str = f" ({rng} days)" if rng is not None else ""
+        parts.append(f"{mn} \u2013 {mx}{rng_str}")
+        missing = summary.get("missing", 0)
+        if missing:
+            parts.append(f"Missing: {missing}")
+        return Markup(sep.join(parts))
 
     if col_type == "title_id":
         unique = summary.get("unique", 0)
         missing = summary.get("missing", 0)
+        parts.append(f"{unique} unique")
+        if missing:
+            parts.append(f"Missing: {missing}")
         samples = summary.get("sample_values", [])
-        sample_str = ", ".join(samples[:5])
-        return Markup(
-            f"<p>{unique} unique values, {missing} missing</p>"
-            f'<p class="sample-values">Sample: {sample_str}</p>'
-        )
+        if samples:
+            parts.append("e.g. " + ", ".join(f"\u201c{s}\u201d" for s in samples[:3]))
+        return Markup(sep.join(parts))
 
     return ""
 
@@ -438,6 +442,54 @@ def concept_restrictions(concept_id):
     )
 
     return jsonify({"concept_id": concept_id, "available": available})
+
+
+@app.route("/taxonomy/api/concept/<concept_id>/column-stats")
+def concept_column_stats(concept_id):
+    if app_state.taxonomy is None:
+        return jsonify({"error": "No taxonomy initialized"}), 400
+    if concept_id not in app_state.taxonomy["concepts"]:
+        return jsonify({"error": "Concept not found"}), 404
+
+    concept = app_state.taxonomy["concepts"][concept_id]
+    row_indices = concept["row_indices"]
+
+    if not row_indices:
+        return jsonify({"stats": []})
+
+    df_sub = app_state.raw_df.loc[row_indices]
+    stats = []
+
+    for col_name, col_row in app_state.column_meta.iterrows():
+        if not col_row["include"]:
+            continue
+        col_type = col_row["user_type"]
+        if col_type == "title_id":
+            continue
+
+        entry = {"column": col_name, "type": col_type}
+
+        if col_type == "numeric":
+            series = pd.to_numeric(df_sub[col_name], errors="coerce").dropna()
+            if len(series) > 0:
+                entry["mean"] = round(float(series.mean()), 4)
+                entry["std"] = round(float(series.std()), 4)
+                entry["min"] = round(float(series.min()), 4)
+                entry["max"] = round(float(series.max()), 4)
+        elif col_type == "categorical":
+            series = df_sub[col_name].dropna().astype(str)
+            top = series.value_counts().head(5)
+            entry["top_values"] = [{"value": v, "count": int(c)} for v, c in top.items()]
+        elif col_type == "date":
+            series = pd.to_datetime(df_sub[col_name], errors="coerce").dropna()
+            if len(series) > 0:
+                entry["mean"] = str(series.mean().date())
+                entry["min"] = str(series.min().date())
+                entry["max"] = str(series.max().date())
+
+        stats.append(entry)
+
+    return jsonify({"stats": stats})
 
 
 @app.route("/taxonomy/api/reset", methods=["POST"])

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // -- State ---------------------------------------------------------------
     var cy = null;
     var selectedNodes = new Set();
+    var preClickSelected = new Set();
     var taxonomyData = null;
     var availableRestrictions = null;
     var wsomPollingInterval = null;
@@ -52,8 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     selector: "node:selected",
                     style: {
-                        "border-width": 3,
-                        "border-color": "var(--accent)",
+                        "border-width": 4,
+                        "border-color": "#2563eb",
+                        "overlay-color": "#2563eb",
+                        "overlay-opacity": 0.08,
                     },
                 },
                 {
@@ -68,8 +71,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
             ],
             layout: { name: "preset" },
-            boxSelectionEnabled: true,
+            boxSelectionEnabled: false,
             selectionType: "additive",
+        });
+
+        // Record which nodes were selected before a click fires
+        cy.on("mousedown", "node", function () {
+            preClickSelected.clear();
+            cy.nodes(":selected").forEach(function (n) {
+                preClickSelected.add(n.id());
+            });
+        });
+
+        // Custom selection: plain click → single-select; Shift+click → toggle
+        cy.on("tap", "node", function (evt) {
+            var node = evt.target;
+            var shiftKey = evt.originalEvent && evt.originalEvent.shiftKey;
+            var wasSelected = preClickSelected.has(node.id());
+            preClickSelected.clear();
+
+            if (!shiftKey) {
+                cy.nodes().not(node).unselect();
+            } else if (wasSelected) {
+                node.unselect();
+            }
         });
 
         cy.on("select", "node", onNodeSelect);
@@ -260,10 +285,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function showMultiSelectionDetail() {
-        var count = selectedNodes.size;
+        var items = Array.from(selectedNodes).map(function (id) {
+            return '<li>' + escapeHtml(getConceptLabel(id)) + '</li>';
+        }).join('');
         document.getElementById("detail-panel").innerHTML =
-            '<div class="detail-placeholder"><p class="text-muted">' +
-            count + ' concepts selected</p></div>';
+            '<div class="detail-content">' +
+            '<p class="text-muted">' + selectedNodes.size + ' concepts selected:</p>' +
+            '<ul class="selected-concepts-list">' + items + '</ul>' +
+            '</div>';
     }
 
     function getConceptLabel(conceptId) {
@@ -355,6 +384,7 @@ document.addEventListener("DOMContentLoaded", function () {
             '  </div>' +
             originHtml +
             restrictionsHtml +
+            '  <div id="concept-col-stats"><span class="text-muted">Loading stats\u2026</span></div>' +
             '</div>';
 
         document.getElementById("detail-panel").innerHTML = html;
@@ -364,6 +394,25 @@ document.addEventListener("DOMContentLoaded", function () {
         nameInput.addEventListener("keydown", function (e) {
             if (e.key === "Enter") this.blur();
         });
+
+        // Load column stats
+        fetch("/taxonomy/api/concept/" + encodeURIComponent(conceptId) + "/column-stats")
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                var el = document.getElementById("concept-col-stats");
+                if (!el) return;
+                if (data.error || !data.stats || data.stats.length === 0) {
+                    el.innerHTML = "";
+                    return;
+                }
+                var rows = data.stats.map(function (s) {
+                    return '<tr>' +
+                        '<td class="cstat-col">' + escapeHtml(s.column) + '</td>' +
+                        '<td class="cstat-val">' + renderColStats(s) + '</td>' +
+                        '</tr>';
+                }).join("");
+                el.innerHTML = '<table class="concept-stats-table"><tbody>' + rows + '</tbody></table>';
+            });
 
         // Load editable restrictions for non-root concepts
         if (!isRoot && node.parent_ids && node.parent_ids.length > 0) {
@@ -401,6 +450,32 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
         }
+    }
+
+    function renderColStats(s) {
+        if (s.type === "numeric") {
+            var parts = [];
+            if (s.mean !== undefined) parts.push("Mean: " + s.mean);
+            if (s.std !== undefined) parts.push("Std: " + s.std);
+            if (s.min !== undefined && s.max !== undefined) {
+                parts.push("Min: " + s.min + " \u2013 Max: " + s.max);
+            }
+            return parts.join(" &nbsp;&middot;&nbsp; ");
+        }
+        if (s.type === "date") {
+            var parts = [];
+            if (s.mean !== undefined) parts.push("Mean: " + s.mean);
+            if (s.min !== undefined && s.max !== undefined) {
+                parts.push("Min: " + s.min + " \u2013 Max: " + s.max);
+            }
+            return parts.join(" &nbsp;&middot;&nbsp; ");
+        }
+        if (s.type === "categorical") {
+            return (s.top_values || []).map(function (v) {
+                return escapeHtml(v.value) + " (" + v.count + ")";
+            }).join(", ");
+        }
+        return "";
     }
 
     function saveConceptRestrictions(conceptId) {
