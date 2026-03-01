@@ -1,0 +1,987 @@
+@prefix :     <http://example.org/iris/schema#> .
+@prefix ent:  <http://example.org/iris/data/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/iris/schema> a owl:Ontology .
+
+:SepalLengthCm a owl:DatatypeProperty ;
+rdfs:range xsd:decimal .
+:SepalWidthCm a owl:DatatypeProperty ;
+rdfs:range xsd:decimal .
+:PetalLengthCm a owl:DatatypeProperty ;
+rdfs:range xsd:decimal .
+:PetalWidthCm a owl:DatatypeProperty ;
+rdfs:range xsd:decimal .
+
+:IrisPlant a owl:Class ;
+rdfs:subClassOf owl:Thing .
+
+:SmallPetalIris a owl:Class ;
+rdfs:subClassOf :IrisPlant ;
+owl:equivalentClass [
+a owl:Class ;
+owl:intersectionOf (
+:IrisPlant
+[ a owl:Restriction ;
+owl:onProperty :PetalLengthCm ;
+owl:someValuesFrom [
+a rdfs:Datatype ;
+owl:onDatatype xsd:decimal ;
+owl:withRestrictions ([ xsd:minInclusive "0.0"^^xsd:decimal ] [ xsd:maxExclusive "2.5"^^xsd:decimal ])
+]
+]
+)
+] .
+
+:LargePetalIris a owl:Class ;
+rdfs:subClassOf :IrisPlant ;
+owl:equivalentClass [
+a owl:Class ;
+owl:intersectionOf (
+:IrisPlant
+[ a owl:Restriction ;
+owl:onProperty :PetalLengthCm ;
+owl:someValuesFrom [
+a rdfs:Datatype ;
+owl:onDatatype xsd:decimal ;
+owl:withRestrictions ([ xsd:minInclusive "2.5"^^xsd:decimal ] [ xsd:maxExclusive "10.0"^^xsd:decimal ])
+]
+]
+)
+] .
+
+:NarrowLargePetalIris a owl:Class ;
+rdfs:subClassOf :LargePetalIris ;
+owl:equivalentClass [
+a owl:Class ;
+owl:intersectionOf (
+:LargePetalIris
+[ a owl:Restriction ;
+owl:onProperty :PetalWidthCm ;
+owl:someValuesFrom [
+a rdfs:Datatype ;
+owl:onDatatype xsd:decimal ;
+owl:withRestrictions ([ xsd:minInclusive "0.0"^^xsd:decimal ] [ xsd:maxExclusive "1.7"^^xsd:decimal ])
+]
+]
+)
+] .
+
+:WideLargePetalIris a owl:Class ;
+rdfs:subClassOf :LargePetalIris ;
+owl:equivalentClass [
+a owl:Class ;
+owl:intersectionOf (
+:LargePetalIris
+[ a owl:Restriction ;
+owl:onProperty :PetalWidthCm ;
+owl:someValuesFrom [
+a rdfs:Datatype ;
+owl:onDatatype xsd:decimal ;
+owl:withRestrictions ([ xsd:minInclusive "1.7"^^xsd:decimal ] [ xsd:maxExclusive "10.0"^^xsd:decimal ])
+]
+]
+)
+] .
+
+ent:entity_0 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.1"^^xsd:decimal ;
+:SepalWidthCm "3.5"^^xsd:decimal ;
+:PetalLengthCm "1.4"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_1 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.9"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "1.4"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_2 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.7"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "1.3"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_3 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.6"^^xsd:decimal ;
+:SepalWidthCm "3.1"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_4 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.0"^^xsd:decimal ;
+:SepalWidthCm "3.6"^^xsd:decimal ;
+:PetalLengthCm "1.4"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_5 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.4"^^xsd:decimal ;
+:SepalWidthCm "3.9"^^xsd:decimal ;
+:PetalLengthCm "1.7"^^xsd:decimal ;
+:PetalWidthCm "0.4"^^xsd:decimal .
+
+ent:entity_6 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.6"^^xsd:decimal ;
+:SepalWidthCm "3.4"^^xsd:decimal ;
+:PetalLengthCm "1.4"^^xsd:decimal ;
+:PetalWidthCm "0.3"^^xsd:decimal .
+
+ent:entity_7 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.0"^^xsd:decimal ;
+:SepalWidthCm "3.4"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_8 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.4"^^xsd:decimal ;
+:SepalWidthCm "2.9"^^xsd:decimal ;
+:PetalLengthCm "1.4"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_9 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.9"^^xsd:decimal ;
+:SepalWidthCm "3.1"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.1"^^xsd:decimal .
+
+ent:entity_10 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.4"^^xsd:decimal ;
+:SepalWidthCm "3.7"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_11 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.8"^^xsd:decimal ;
+:SepalWidthCm "3.4"^^xsd:decimal ;
+:PetalLengthCm "1.6"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_12 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.8"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "1.4"^^xsd:decimal ;
+:PetalWidthCm "0.1"^^xsd:decimal .
+
+ent:entity_13 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.3"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "1.1"^^xsd:decimal ;
+:PetalWidthCm "0.1"^^xsd:decimal .
+
+ent:entity_14 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.8"^^xsd:decimal ;
+:SepalWidthCm "4.0"^^xsd:decimal ;
+:PetalLengthCm "1.2"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_15 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.7"^^xsd:decimal ;
+:SepalWidthCm "4.4"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.4"^^xsd:decimal .
+
+ent:entity_16 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.4"^^xsd:decimal ;
+:SepalWidthCm "3.9"^^xsd:decimal ;
+:PetalLengthCm "1.3"^^xsd:decimal ;
+:PetalWidthCm "0.4"^^xsd:decimal .
+
+ent:entity_17 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.1"^^xsd:decimal ;
+:SepalWidthCm "3.5"^^xsd:decimal ;
+:PetalLengthCm "1.4"^^xsd:decimal ;
+:PetalWidthCm "0.3"^^xsd:decimal .
+
+ent:entity_18 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.7"^^xsd:decimal ;
+:SepalWidthCm "3.8"^^xsd:decimal ;
+:PetalLengthCm "1.7"^^xsd:decimal ;
+:PetalWidthCm "0.3"^^xsd:decimal .
+
+ent:entity_19 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.1"^^xsd:decimal ;
+:SepalWidthCm "3.8"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.3"^^xsd:decimal .
+
+ent:entity_20 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.4"^^xsd:decimal ;
+:SepalWidthCm "3.4"^^xsd:decimal ;
+:PetalLengthCm "1.7"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_21 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.1"^^xsd:decimal ;
+:SepalWidthCm "3.7"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.4"^^xsd:decimal .
+
+ent:entity_22 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.6"^^xsd:decimal ;
+:SepalWidthCm "3.6"^^xsd:decimal ;
+:PetalLengthCm "1.0"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_23 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.1"^^xsd:decimal ;
+:SepalWidthCm "3.3"^^xsd:decimal ;
+:PetalLengthCm "1.7"^^xsd:decimal ;
+:PetalWidthCm "0.5"^^xsd:decimal .
+
+ent:entity_24 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.8"^^xsd:decimal ;
+:SepalWidthCm "3.4"^^xsd:decimal ;
+:PetalLengthCm "1.9"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_25 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.0"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "1.6"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_26 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.0"^^xsd:decimal ;
+:SepalWidthCm "3.4"^^xsd:decimal ;
+:PetalLengthCm "1.6"^^xsd:decimal ;
+:PetalWidthCm "0.4"^^xsd:decimal .
+
+ent:entity_27 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.2"^^xsd:decimal ;
+:SepalWidthCm "3.5"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_28 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.2"^^xsd:decimal ;
+:SepalWidthCm "3.4"^^xsd:decimal ;
+:PetalLengthCm "1.4"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_29 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.7"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "1.6"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_30 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.8"^^xsd:decimal ;
+:SepalWidthCm "3.1"^^xsd:decimal ;
+:PetalLengthCm "1.6"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_31 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.4"^^xsd:decimal ;
+:SepalWidthCm "3.4"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.4"^^xsd:decimal .
+
+ent:entity_32 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.2"^^xsd:decimal ;
+:SepalWidthCm "4.1"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.1"^^xsd:decimal .
+
+ent:entity_33 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.5"^^xsd:decimal ;
+:SepalWidthCm "4.2"^^xsd:decimal ;
+:PetalLengthCm "1.4"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_34 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.9"^^xsd:decimal ;
+:SepalWidthCm "3.1"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.1"^^xsd:decimal .
+
+ent:entity_35 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.0"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "1.2"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_36 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.5"^^xsd:decimal ;
+:SepalWidthCm "3.5"^^xsd:decimal ;
+:PetalLengthCm "1.3"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_37 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.9"^^xsd:decimal ;
+:SepalWidthCm "3.1"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.1"^^xsd:decimal .
+
+ent:entity_38 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.4"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "1.3"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_39 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.1"^^xsd:decimal ;
+:SepalWidthCm "3.4"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_40 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.0"^^xsd:decimal ;
+:SepalWidthCm "3.5"^^xsd:decimal ;
+:PetalLengthCm "1.3"^^xsd:decimal ;
+:PetalWidthCm "0.3"^^xsd:decimal .
+
+ent:entity_41 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.5"^^xsd:decimal ;
+:SepalWidthCm "2.3"^^xsd:decimal ;
+:PetalLengthCm "1.3"^^xsd:decimal ;
+:PetalWidthCm "0.3"^^xsd:decimal .
+
+ent:entity_42 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.4"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "1.3"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_43 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.0"^^xsd:decimal ;
+:SepalWidthCm "3.5"^^xsd:decimal ;
+:PetalLengthCm "1.6"^^xsd:decimal ;
+:PetalWidthCm "0.6"^^xsd:decimal .
+
+ent:entity_44 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.1"^^xsd:decimal ;
+:SepalWidthCm "3.8"^^xsd:decimal ;
+:PetalLengthCm "1.9"^^xsd:decimal ;
+:PetalWidthCm "0.4"^^xsd:decimal .
+
+ent:entity_45 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.8"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "1.4"^^xsd:decimal ;
+:PetalWidthCm "0.3"^^xsd:decimal .
+
+ent:entity_46 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.1"^^xsd:decimal ;
+:SepalWidthCm "3.8"^^xsd:decimal ;
+:PetalLengthCm "1.6"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_47 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "4.6"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "1.4"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_48 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.3"^^xsd:decimal ;
+:SepalWidthCm "3.7"^^xsd:decimal ;
+:PetalLengthCm "1.5"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_49 a owl:NamedIndividual , :SmallPetalIris ;
+:SepalLengthCm "5.0"^^xsd:decimal ;
+:SepalWidthCm "3.3"^^xsd:decimal ;
+:PetalLengthCm "1.4"^^xsd:decimal ;
+:PetalWidthCm "0.2"^^xsd:decimal .
+
+ent:entity_50 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "7.0"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "4.7"^^xsd:decimal ;
+:PetalWidthCm "1.4"^^xsd:decimal .
+
+ent:entity_51 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.4"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "4.5"^^xsd:decimal ;
+:PetalWidthCm "1.5"^^xsd:decimal .
+
+ent:entity_52 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.9"^^xsd:decimal ;
+:SepalWidthCm "3.1"^^xsd:decimal ;
+:PetalLengthCm "4.9"^^xsd:decimal ;
+:PetalWidthCm "1.5"^^xsd:decimal .
+
+ent:entity_53 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.5"^^xsd:decimal ;
+:SepalWidthCm "2.3"^^xsd:decimal ;
+:PetalLengthCm "4.0"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_54 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.5"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "4.6"^^xsd:decimal ;
+:PetalWidthCm "1.5"^^xsd:decimal .
+
+ent:entity_55 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.7"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "4.5"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_56 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.3"^^xsd:decimal ;
+:SepalWidthCm "3.3"^^xsd:decimal ;
+:PetalLengthCm "4.7"^^xsd:decimal ;
+:PetalWidthCm "1.6"^^xsd:decimal .
+
+ent:entity_57 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "4.9"^^xsd:decimal ;
+:SepalWidthCm "2.4"^^xsd:decimal ;
+:PetalLengthCm "3.3"^^xsd:decimal ;
+:PetalWidthCm "1.0"^^xsd:decimal .
+
+ent:entity_58 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.6"^^xsd:decimal ;
+:SepalWidthCm "2.9"^^xsd:decimal ;
+:PetalLengthCm "4.6"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_59 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.2"^^xsd:decimal ;
+:SepalWidthCm "2.7"^^xsd:decimal ;
+:PetalLengthCm "3.9"^^xsd:decimal ;
+:PetalWidthCm "1.4"^^xsd:decimal .
+
+ent:entity_60 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.0"^^xsd:decimal ;
+:SepalWidthCm "2.0"^^xsd:decimal ;
+:PetalLengthCm "3.5"^^xsd:decimal ;
+:PetalWidthCm "1.0"^^xsd:decimal .
+
+ent:entity_61 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.9"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "4.2"^^xsd:decimal ;
+:PetalWidthCm "1.5"^^xsd:decimal .
+
+ent:entity_62 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.0"^^xsd:decimal ;
+:SepalWidthCm "2.2"^^xsd:decimal ;
+:PetalLengthCm "4.0"^^xsd:decimal ;
+:PetalWidthCm "1.0"^^xsd:decimal .
+
+ent:entity_63 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.1"^^xsd:decimal ;
+:SepalWidthCm "2.9"^^xsd:decimal ;
+:PetalLengthCm "4.7"^^xsd:decimal ;
+:PetalWidthCm "1.4"^^xsd:decimal .
+
+ent:entity_64 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.6"^^xsd:decimal ;
+:SepalWidthCm "2.9"^^xsd:decimal ;
+:PetalLengthCm "3.6"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_65 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.7"^^xsd:decimal ;
+:SepalWidthCm "3.1"^^xsd:decimal ;
+:PetalLengthCm "4.4"^^xsd:decimal ;
+:PetalWidthCm "1.4"^^xsd:decimal .
+
+ent:entity_66 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.6"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "4.5"^^xsd:decimal ;
+:PetalWidthCm "1.5"^^xsd:decimal .
+
+ent:entity_67 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.8"^^xsd:decimal ;
+:SepalWidthCm "2.7"^^xsd:decimal ;
+:PetalLengthCm "4.1"^^xsd:decimal ;
+:PetalWidthCm "1.0"^^xsd:decimal .
+
+ent:entity_68 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.2"^^xsd:decimal ;
+:SepalWidthCm "2.2"^^xsd:decimal ;
+:PetalLengthCm "4.5"^^xsd:decimal ;
+:PetalWidthCm "1.5"^^xsd:decimal .
+
+ent:entity_69 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.6"^^xsd:decimal ;
+:SepalWidthCm "2.5"^^xsd:decimal ;
+:PetalLengthCm "3.9"^^xsd:decimal ;
+:PetalWidthCm "1.1"^^xsd:decimal .
+
+ent:entity_70 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "5.9"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "4.8"^^xsd:decimal ;
+:PetalWidthCm "1.8"^^xsd:decimal .
+
+ent:entity_71 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.1"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "4.0"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_72 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.3"^^xsd:decimal ;
+:SepalWidthCm "2.5"^^xsd:decimal ;
+:PetalLengthCm "4.9"^^xsd:decimal ;
+:PetalWidthCm "1.5"^^xsd:decimal .
+
+ent:entity_73 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.1"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "4.7"^^xsd:decimal ;
+:PetalWidthCm "1.2"^^xsd:decimal .
+
+ent:entity_74 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.4"^^xsd:decimal ;
+:SepalWidthCm "2.9"^^xsd:decimal ;
+:PetalLengthCm "4.3"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_75 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.6"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "4.4"^^xsd:decimal ;
+:PetalWidthCm "1.4"^^xsd:decimal .
+
+ent:entity_76 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.8"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "4.8"^^xsd:decimal ;
+:PetalWidthCm "1.4"^^xsd:decimal .
+
+ent:entity_77 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.7"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "5.0"^^xsd:decimal ;
+:PetalWidthCm "1.7"^^xsd:decimal .
+
+ent:entity_78 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.0"^^xsd:decimal ;
+:SepalWidthCm "2.9"^^xsd:decimal ;
+:PetalLengthCm "4.5"^^xsd:decimal ;
+:PetalWidthCm "1.5"^^xsd:decimal .
+
+ent:entity_79 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.7"^^xsd:decimal ;
+:SepalWidthCm "2.6"^^xsd:decimal ;
+:PetalLengthCm "3.5"^^xsd:decimal ;
+:PetalWidthCm "1.0"^^xsd:decimal .
+
+ent:entity_80 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.5"^^xsd:decimal ;
+:SepalWidthCm "2.4"^^xsd:decimal ;
+:PetalLengthCm "3.8"^^xsd:decimal ;
+:PetalWidthCm "1.1"^^xsd:decimal .
+
+ent:entity_81 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.5"^^xsd:decimal ;
+:SepalWidthCm "2.4"^^xsd:decimal ;
+:PetalLengthCm "3.7"^^xsd:decimal ;
+:PetalWidthCm "1.0"^^xsd:decimal .
+
+ent:entity_82 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.8"^^xsd:decimal ;
+:SepalWidthCm "2.7"^^xsd:decimal ;
+:PetalLengthCm "3.9"^^xsd:decimal ;
+:PetalWidthCm "1.2"^^xsd:decimal .
+
+ent:entity_83 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.0"^^xsd:decimal ;
+:SepalWidthCm "2.7"^^xsd:decimal ;
+:PetalLengthCm "5.1"^^xsd:decimal ;
+:PetalWidthCm "1.6"^^xsd:decimal .
+
+ent:entity_84 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.4"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "4.5"^^xsd:decimal ;
+:PetalWidthCm "1.5"^^xsd:decimal .
+
+ent:entity_85 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.0"^^xsd:decimal ;
+:SepalWidthCm "3.4"^^xsd:decimal ;
+:PetalLengthCm "4.5"^^xsd:decimal ;
+:PetalWidthCm "1.6"^^xsd:decimal .
+
+ent:entity_86 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.7"^^xsd:decimal ;
+:SepalWidthCm "3.1"^^xsd:decimal ;
+:PetalLengthCm "4.7"^^xsd:decimal ;
+:PetalWidthCm "1.5"^^xsd:decimal .
+
+ent:entity_87 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.3"^^xsd:decimal ;
+:SepalWidthCm "2.3"^^xsd:decimal ;
+:PetalLengthCm "4.4"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_88 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.6"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "4.1"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_89 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.5"^^xsd:decimal ;
+:SepalWidthCm "2.5"^^xsd:decimal ;
+:PetalLengthCm "4.0"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_90 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.5"^^xsd:decimal ;
+:SepalWidthCm "2.6"^^xsd:decimal ;
+:PetalLengthCm "4.4"^^xsd:decimal ;
+:PetalWidthCm "1.2"^^xsd:decimal .
+
+ent:entity_91 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.1"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "4.6"^^xsd:decimal ;
+:PetalWidthCm "1.4"^^xsd:decimal .
+
+ent:entity_92 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.8"^^xsd:decimal ;
+:SepalWidthCm "2.6"^^xsd:decimal ;
+:PetalLengthCm "4.0"^^xsd:decimal ;
+:PetalWidthCm "1.2"^^xsd:decimal .
+
+ent:entity_93 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.0"^^xsd:decimal ;
+:SepalWidthCm "2.3"^^xsd:decimal ;
+:PetalLengthCm "3.3"^^xsd:decimal ;
+:PetalWidthCm "1.0"^^xsd:decimal .
+
+ent:entity_94 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.6"^^xsd:decimal ;
+:SepalWidthCm "2.7"^^xsd:decimal ;
+:PetalLengthCm "4.2"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_95 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.7"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "4.2"^^xsd:decimal ;
+:PetalWidthCm "1.2"^^xsd:decimal .
+
+ent:entity_96 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.7"^^xsd:decimal ;
+:SepalWidthCm "2.9"^^xsd:decimal ;
+:PetalLengthCm "4.2"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_97 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.2"^^xsd:decimal ;
+:SepalWidthCm "2.9"^^xsd:decimal ;
+:PetalLengthCm "4.3"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_98 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.1"^^xsd:decimal ;
+:SepalWidthCm "2.5"^^xsd:decimal ;
+:PetalLengthCm "3.0"^^xsd:decimal ;
+:PetalWidthCm "1.1"^^xsd:decimal .
+
+ent:entity_99 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "5.7"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "4.1"^^xsd:decimal ;
+:PetalWidthCm "1.3"^^xsd:decimal .
+
+ent:entity_100 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.3"^^xsd:decimal ;
+:SepalWidthCm "3.3"^^xsd:decimal ;
+:PetalLengthCm "6.0"^^xsd:decimal ;
+:PetalWidthCm "2.5"^^xsd:decimal .
+
+ent:entity_101 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "5.8"^^xsd:decimal ;
+:SepalWidthCm "2.7"^^xsd:decimal ;
+:PetalLengthCm "5.1"^^xsd:decimal ;
+:PetalWidthCm "1.9"^^xsd:decimal .
+
+ent:entity_102 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "7.1"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "5.9"^^xsd:decimal ;
+:PetalWidthCm "2.1"^^xsd:decimal .
+
+ent:entity_103 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.3"^^xsd:decimal ;
+:SepalWidthCm "2.9"^^xsd:decimal ;
+:PetalLengthCm "5.6"^^xsd:decimal ;
+:PetalWidthCm "1.8"^^xsd:decimal .
+
+ent:entity_104 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.5"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "5.8"^^xsd:decimal ;
+:PetalWidthCm "2.2"^^xsd:decimal .
+
+ent:entity_105 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "7.6"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "6.6"^^xsd:decimal ;
+:PetalWidthCm "2.1"^^xsd:decimal .
+
+ent:entity_106 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "4.9"^^xsd:decimal ;
+:SepalWidthCm "2.5"^^xsd:decimal ;
+:PetalLengthCm "4.5"^^xsd:decimal ;
+:PetalWidthCm "1.7"^^xsd:decimal .
+
+ent:entity_107 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "7.3"^^xsd:decimal ;
+:SepalWidthCm "2.9"^^xsd:decimal ;
+:PetalLengthCm "6.3"^^xsd:decimal ;
+:PetalWidthCm "1.8"^^xsd:decimal .
+
+ent:entity_108 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.7"^^xsd:decimal ;
+:SepalWidthCm "2.5"^^xsd:decimal ;
+:PetalLengthCm "5.8"^^xsd:decimal ;
+:PetalWidthCm "1.8"^^xsd:decimal .
+
+ent:entity_109 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "7.2"^^xsd:decimal ;
+:SepalWidthCm "3.6"^^xsd:decimal ;
+:PetalLengthCm "6.1"^^xsd:decimal ;
+:PetalWidthCm "2.5"^^xsd:decimal .
+
+ent:entity_110 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.5"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "5.1"^^xsd:decimal ;
+:PetalWidthCm "2.0"^^xsd:decimal .
+
+ent:entity_111 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.4"^^xsd:decimal ;
+:SepalWidthCm "2.7"^^xsd:decimal ;
+:PetalLengthCm "5.3"^^xsd:decimal ;
+:PetalWidthCm "1.9"^^xsd:decimal .
+
+ent:entity_112 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.8"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "5.5"^^xsd:decimal ;
+:PetalWidthCm "2.1"^^xsd:decimal .
+
+ent:entity_113 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "5.7"^^xsd:decimal ;
+:SepalWidthCm "2.5"^^xsd:decimal ;
+:PetalLengthCm "5.0"^^xsd:decimal ;
+:PetalWidthCm "2.0"^^xsd:decimal .
+
+ent:entity_114 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "5.8"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "5.1"^^xsd:decimal ;
+:PetalWidthCm "2.4"^^xsd:decimal .
+
+ent:entity_115 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.4"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "5.3"^^xsd:decimal ;
+:PetalWidthCm "2.3"^^xsd:decimal .
+
+ent:entity_116 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.5"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "5.5"^^xsd:decimal ;
+:PetalWidthCm "1.8"^^xsd:decimal .
+
+ent:entity_117 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "7.7"^^xsd:decimal ;
+:SepalWidthCm "3.8"^^xsd:decimal ;
+:PetalLengthCm "6.7"^^xsd:decimal ;
+:PetalWidthCm "2.2"^^xsd:decimal .
+
+ent:entity_118 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "7.7"^^xsd:decimal ;
+:SepalWidthCm "2.6"^^xsd:decimal ;
+:PetalLengthCm "6.9"^^xsd:decimal ;
+:PetalWidthCm "2.3"^^xsd:decimal .
+
+ent:entity_119 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.0"^^xsd:decimal ;
+:SepalWidthCm "2.2"^^xsd:decimal ;
+:PetalLengthCm "5.0"^^xsd:decimal ;
+:PetalWidthCm "1.5"^^xsd:decimal .
+
+ent:entity_120 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.9"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "5.7"^^xsd:decimal ;
+:PetalWidthCm "2.3"^^xsd:decimal .
+
+ent:entity_121 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "5.6"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "4.9"^^xsd:decimal ;
+:PetalWidthCm "2.0"^^xsd:decimal .
+
+ent:entity_122 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "7.7"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "6.7"^^xsd:decimal ;
+:PetalWidthCm "2.0"^^xsd:decimal .
+
+ent:entity_123 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.3"^^xsd:decimal ;
+:SepalWidthCm "2.7"^^xsd:decimal ;
+:PetalLengthCm "4.9"^^xsd:decimal ;
+:PetalWidthCm "1.8"^^xsd:decimal .
+
+ent:entity_124 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.7"^^xsd:decimal ;
+:SepalWidthCm "3.3"^^xsd:decimal ;
+:PetalLengthCm "5.7"^^xsd:decimal ;
+:PetalWidthCm "2.1"^^xsd:decimal .
+
+ent:entity_125 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "7.2"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "6.0"^^xsd:decimal ;
+:PetalWidthCm "1.8"^^xsd:decimal .
+
+ent:entity_126 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.2"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "4.8"^^xsd:decimal ;
+:PetalWidthCm "1.8"^^xsd:decimal .
+
+ent:entity_127 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.1"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "4.9"^^xsd:decimal ;
+:PetalWidthCm "1.8"^^xsd:decimal .
+
+ent:entity_128 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.4"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "5.6"^^xsd:decimal ;
+:PetalWidthCm "2.1"^^xsd:decimal .
+
+ent:entity_129 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "7.2"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "5.8"^^xsd:decimal ;
+:PetalWidthCm "1.6"^^xsd:decimal .
+
+ent:entity_130 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "7.4"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "6.1"^^xsd:decimal ;
+:PetalWidthCm "1.9"^^xsd:decimal .
+
+ent:entity_131 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "7.9"^^xsd:decimal ;
+:SepalWidthCm "3.8"^^xsd:decimal ;
+:PetalLengthCm "6.4"^^xsd:decimal ;
+:PetalWidthCm "2.0"^^xsd:decimal .
+
+ent:entity_132 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.4"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "5.6"^^xsd:decimal ;
+:PetalWidthCm "2.2"^^xsd:decimal .
+
+ent:entity_133 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.3"^^xsd:decimal ;
+:SepalWidthCm "2.8"^^xsd:decimal ;
+:PetalLengthCm "5.1"^^xsd:decimal ;
+:PetalWidthCm "1.5"^^xsd:decimal .
+
+ent:entity_134 a owl:NamedIndividual , :NarrowLargePetalIris ;
+:SepalLengthCm "6.1"^^xsd:decimal ;
+:SepalWidthCm "2.6"^^xsd:decimal ;
+:PetalLengthCm "5.6"^^xsd:decimal ;
+:PetalWidthCm "1.4"^^xsd:decimal .
+
+ent:entity_135 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "7.7"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "6.1"^^xsd:decimal ;
+:PetalWidthCm "2.3"^^xsd:decimal .
+
+ent:entity_136 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.3"^^xsd:decimal ;
+:SepalWidthCm "3.4"^^xsd:decimal ;
+:PetalLengthCm "5.6"^^xsd:decimal ;
+:PetalWidthCm "2.4"^^xsd:decimal .
+
+ent:entity_137 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.4"^^xsd:decimal ;
+:SepalWidthCm "3.1"^^xsd:decimal ;
+:PetalLengthCm "5.5"^^xsd:decimal ;
+:PetalWidthCm "1.8"^^xsd:decimal .
+
+ent:entity_138 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.0"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "4.8"^^xsd:decimal ;
+:PetalWidthCm "1.8"^^xsd:decimal .
+
+ent:entity_139 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.9"^^xsd:decimal ;
+:SepalWidthCm "3.1"^^xsd:decimal ;
+:PetalLengthCm "5.4"^^xsd:decimal ;
+:PetalWidthCm "2.1"^^xsd:decimal .
+
+ent:entity_140 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.7"^^xsd:decimal ;
+:SepalWidthCm "3.1"^^xsd:decimal ;
+:PetalLengthCm "5.6"^^xsd:decimal ;
+:PetalWidthCm "2.4"^^xsd:decimal .
+
+ent:entity_141 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.9"^^xsd:decimal ;
+:SepalWidthCm "3.1"^^xsd:decimal ;
+:PetalLengthCm "5.1"^^xsd:decimal ;
+:PetalWidthCm "2.3"^^xsd:decimal .
+
+ent:entity_142 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "5.8"^^xsd:decimal ;
+:SepalWidthCm "2.7"^^xsd:decimal ;
+:PetalLengthCm "5.1"^^xsd:decimal ;
+:PetalWidthCm "1.9"^^xsd:decimal .
+
+ent:entity_143 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.8"^^xsd:decimal ;
+:SepalWidthCm "3.2"^^xsd:decimal ;
+:PetalLengthCm "5.9"^^xsd:decimal ;
+:PetalWidthCm "2.3"^^xsd:decimal .
+
+ent:entity_144 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.7"^^xsd:decimal ;
+:SepalWidthCm "3.3"^^xsd:decimal ;
+:PetalLengthCm "5.7"^^xsd:decimal ;
+:PetalWidthCm "2.5"^^xsd:decimal .
+
+ent:entity_145 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.7"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "5.2"^^xsd:decimal ;
+:PetalWidthCm "2.3"^^xsd:decimal .
+
+ent:entity_146 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.3"^^xsd:decimal ;
+:SepalWidthCm "2.5"^^xsd:decimal ;
+:PetalLengthCm "5.0"^^xsd:decimal ;
+:PetalWidthCm "1.9"^^xsd:decimal .
+
+ent:entity_147 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.5"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "5.2"^^xsd:decimal ;
+:PetalWidthCm "2.0"^^xsd:decimal .
+
+ent:entity_148 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "6.2"^^xsd:decimal ;
+:SepalWidthCm "3.4"^^xsd:decimal ;
+:PetalLengthCm "5.4"^^xsd:decimal ;
+:PetalWidthCm "2.3"^^xsd:decimal .
+
+ent:entity_149 a owl:NamedIndividual , :WideLargePetalIris ;
+:SepalLengthCm "5.9"^^xsd:decimal ;
+:SepalWidthCm "3.0"^^xsd:decimal ;
+:PetalLengthCm "5.1"^^xsd:decimal ;
+:PetalWidthCm "1.8"^^xsd:decimal .

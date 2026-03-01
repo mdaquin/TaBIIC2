@@ -1,0 +1,36 @@
+Build an OWL ontology in Turtle format from the attached iris CSV file.
+
+Use only the four numeric columns (SepalLengthCm, SepalWidthCm, PetalLengthCm,
+PetalWidthCm) -- ignore Id and Species entirely.
+
+Output requirements:
+
+PREFIXES
+  @prefix :    <http://example.org/iris/schema#> .
+  @prefix ent: <http://example.org/iris/data/> .
+  @prefix owl: <http://www.w3.org/2002/07/owl#> .
+  @prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> .
+  @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+PROPERTIES
+  One owl:DatatypeProperty per measurement column, range xsd:decimal.
+
+TAXONOMY (2-4 levels deep)
+  - Root class as subclass of owl:Thing.
+  - Subclasses connected by rdfs:subClassOf.
+  - Each non-root class has an owl:equivalentClass built from
+    owl:intersectionOf(parent class, owl:Restriction...) using
+    owl:someValuesFrom with OWL 2 datatype restrictions (xsd facets) to
+    express numeric ranges. Choose thresholds that reflect real boundaries
+    in the data. Example restriction:
+      [ a owl:Restriction ; owl:onProperty :PetalLengthCm ;
+        owl:someValuesFrom [ a rdfs:Datatype ; owl:onDatatype xsd:decimal ;
+          owl:withRestrictions ([ xsd:minInclusive "0.0"^^xsd:decimal ]
+                                [ xsd:maxExclusive "3.0"^^xsd:decimal ]) ] ]
+
+INDIVIDUALS
+  For each row (0-indexed), declare ent:entity_<N> as owl:NamedIndividual,
+  typed to its most specific leaf class only, with its four measurement values
+  as xsd:decimal literals.
+
+Output only valid Turtle, no prose or markdown fences.
