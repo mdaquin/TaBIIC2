@@ -1,0 +1,3095 @@
+@prefix : <http://example.org/iris/schema#> .
+@prefix ent: <http://example.org/iris/data/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ent:entity_0 a :c47,
+        owl:NamedIndividual ;
+    :Id "1"^^xsd:string ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.5 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_1 a :c12,
+        owl:NamedIndividual ;
+    :Id "2"^^xsd:string ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.9 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_10 a :c19,
+        owl:NamedIndividual ;
+    :Id "11"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.4 ;
+    :SepalWidthCm 3.7 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_100 a :c77,
+        owl:NamedIndividual ;
+    :Id "101"^^xsd:string ;
+    :PetalLengthCm 6.0 ;
+    :PetalWidthCm 2.5 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 3.3 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_101 a :c94,
+        owl:NamedIndividual ;
+    :Id "102"^^xsd:string ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 1.9 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_102 a :c58,
+        owl:NamedIndividual ;
+    :Id "103"^^xsd:string ;
+    :PetalLengthCm 5.9 ;
+    :PetalWidthCm 2.1 ;
+    :SepalLengthCm 7.1 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_103 a :c58,
+        owl:NamedIndividual ;
+    :Id "104"^^xsd:string ;
+    :PetalLengthCm 5.6 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_104 a :c58,
+        owl:NamedIndividual ;
+    :Id "105"^^xsd:string ;
+    :PetalLengthCm 5.8 ;
+    :PetalWidthCm 2.2 ;
+    :SepalLengthCm 6.5 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_105 a :c58,
+        owl:NamedIndividual ;
+    :Id "106"^^xsd:string ;
+    :PetalLengthCm 6.6 ;
+    :PetalWidthCm 2.1 ;
+    :SepalLengthCm 7.6 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_106 a :c48,
+        owl:NamedIndividual ;
+    :Id "107"^^xsd:string ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.7 ;
+    :SepalLengthCm 4.9 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_107 a :c58,
+        owl:NamedIndividual ;
+    :Id "108"^^xsd:string ;
+    :PetalLengthCm 6.3 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 7.3 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_108 a :c76,
+        owl:NamedIndividual ;
+    :Id "109"^^xsd:string ;
+    :PetalLengthCm 5.8 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_109 a :c77,
+        owl:NamedIndividual ;
+    :Id "110"^^xsd:string ;
+    :PetalLengthCm 6.1 ;
+    :PetalWidthCm 2.5 ;
+    :SepalLengthCm 7.2 ;
+    :SepalWidthCm 3.6 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_11 a :c47,
+        owl:NamedIndividual ;
+    :Id "12"^^xsd:string ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.8 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_110 a :c77,
+        owl:NamedIndividual ;
+    :Id "111"^^xsd:string ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 2.0 ;
+    :SepalLengthCm 6.5 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_111 a :c76,
+        owl:NamedIndividual ;
+    :Id "112"^^xsd:string ;
+    :PetalLengthCm 5.3 ;
+    :PetalWidthCm 1.9 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_112 a :c58,
+        owl:NamedIndividual ;
+    :Id "113"^^xsd:string ;
+    :PetalLengthCm 5.5 ;
+    :PetalWidthCm 2.1 ;
+    :SepalLengthCm 6.8 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_113 a :c94,
+        owl:NamedIndividual ;
+    :Id "114"^^xsd:string ;
+    :PetalLengthCm 5.0 ;
+    :PetalWidthCm 2.0 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_114 a :c94,
+        owl:NamedIndividual ;
+    :Id "115"^^xsd:string ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 2.4 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_115 a :c77,
+        owl:NamedIndividual ;
+    :Id "116"^^xsd:string ;
+    :PetalLengthCm 5.3 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_116 a :c58,
+        owl:NamedIndividual ;
+    :Id "117"^^xsd:string ;
+    :PetalLengthCm 5.5 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.5 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_117 a :c77,
+        owl:NamedIndividual ;
+    :Id "118"^^xsd:string ;
+    :PetalLengthCm 6.7 ;
+    :PetalWidthCm 2.2 ;
+    :SepalLengthCm 7.7 ;
+    :SepalWidthCm 3.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_118 a :c76,
+        owl:NamedIndividual ;
+    :Id "119"^^xsd:string ;
+    :PetalLengthCm 6.9 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 7.7 ;
+    :SepalWidthCm 2.6 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_119 a :c69,
+        owl:NamedIndividual ;
+    :Id "120"^^xsd:string ;
+    :PetalLengthCm 5.0 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.0 ;
+    :SepalWidthCm 2.2 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_12 a :c12,
+        owl:NamedIndividual ;
+    :Id "13"^^xsd:string ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.1 ;
+    :SepalLengthCm 4.8 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_120 a :c77,
+        owl:NamedIndividual ;
+    :Id "121"^^xsd:string ;
+    :PetalLengthCm 5.7 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 6.9 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_121 a :c94,
+        owl:NamedIndividual ;
+    :Id "122"^^xsd:string ;
+    :PetalLengthCm 4.9 ;
+    :PetalWidthCm 2.0 ;
+    :SepalLengthCm 5.6 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_122 a :c76,
+        owl:NamedIndividual ;
+    :Id "123"^^xsd:string ;
+    :PetalLengthCm 6.7 ;
+    :PetalWidthCm 2.0 ;
+    :SepalLengthCm 7.7 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_123 a :c76,
+        owl:NamedIndividual ;
+    :Id "124"^^xsd:string ;
+    :PetalLengthCm 4.9 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_124 a :c77,
+        owl:NamedIndividual ;
+    :Id "125"^^xsd:string ;
+    :PetalLengthCm 5.7 ;
+    :PetalWidthCm 2.1 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.3 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_125 a :c77,
+        owl:NamedIndividual ;
+    :Id "126"^^xsd:string ;
+    :PetalLengthCm 6.0 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 7.2 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_126 a :c93,
+        owl:NamedIndividual ;
+    :Id "127"^^xsd:string ;
+    :PetalLengthCm 4.8 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.2 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_127 a :c60,
+        owl:NamedIndividual ;
+    :Id "128"^^xsd:string ;
+    :PetalLengthCm 4.9 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.1 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_128 a :c76,
+        owl:NamedIndividual ;
+    :Id "129"^^xsd:string ;
+    :PetalLengthCm 5.6 ;
+    :PetalWidthCm 2.1 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_129 a :c58,
+        owl:NamedIndividual ;
+    :Id "130"^^xsd:string ;
+    :PetalLengthCm 5.8 ;
+    :PetalWidthCm 1.6 ;
+    :SepalLengthCm 7.2 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_13 a :c12,
+        owl:NamedIndividual ;
+    :Id "14"^^xsd:string ;
+    :PetalLengthCm 1.1 ;
+    :PetalWidthCm 0.1 ;
+    :SepalLengthCm 4.3 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_130 a :c76,
+        owl:NamedIndividual ;
+    :Id "131"^^xsd:string ;
+    :PetalLengthCm 6.1 ;
+    :PetalWidthCm 1.9 ;
+    :SepalLengthCm 7.4 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_131 a :c77,
+        owl:NamedIndividual ;
+    :Id "132"^^xsd:string ;
+    :PetalLengthCm 6.4 ;
+    :PetalWidthCm 2.0 ;
+    :SepalLengthCm 7.9 ;
+    :SepalWidthCm 3.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_132 a :c76,
+        owl:NamedIndividual ;
+    :Id "133"^^xsd:string ;
+    :PetalLengthCm 5.6 ;
+    :PetalWidthCm 2.2 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_133 a :c91,
+        owl:NamedIndividual ;
+    :Id "134"^^xsd:string ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_134 a :c69,
+        owl:NamedIndividual ;
+    :Id "135"^^xsd:string ;
+    :PetalLengthCm 5.6 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 6.1 ;
+    :SepalWidthCm 2.6 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_135 a :c58,
+        owl:NamedIndividual ;
+    :Id "136"^^xsd:string ;
+    :PetalLengthCm 6.1 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 7.7 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_136 a :c77,
+        owl:NamedIndividual ;
+    :Id "137"^^xsd:string ;
+    :PetalLengthCm 5.6 ;
+    :PetalWidthCm 2.4 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_137 a :c58,
+        owl:NamedIndividual ;
+    :Id "138"^^xsd:string ;
+    :PetalLengthCm 5.5 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_138 a :c62,
+        owl:NamedIndividual ;
+    :Id "139"^^xsd:string ;
+    :PetalLengthCm 4.8 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.0 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_139 a :c58,
+        owl:NamedIndividual ;
+    :Id "140"^^xsd:string ;
+    :PetalLengthCm 5.4 ;
+    :PetalWidthCm 2.1 ;
+    :SepalLengthCm 6.9 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_14 a :c19,
+        owl:NamedIndividual ;
+    :Id "15"^^xsd:string ;
+    :PetalLengthCm 1.2 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 4.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_140 a :c58,
+        owl:NamedIndividual ;
+    :Id "141"^^xsd:string ;
+    :PetalLengthCm 5.6 ;
+    :PetalWidthCm 2.4 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_141 a :c58,
+        owl:NamedIndividual ;
+    :Id "142"^^xsd:string ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 6.9 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_142 a :c94,
+        owl:NamedIndividual ;
+    :Id "143"^^xsd:string ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 1.9 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_143 a :c77,
+        owl:NamedIndividual ;
+    :Id "144"^^xsd:string ;
+    :PetalLengthCm 5.9 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 6.8 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_144 a :c77,
+        owl:NamedIndividual ;
+    :Id "145"^^xsd:string ;
+    :PetalLengthCm 5.7 ;
+    :PetalWidthCm 2.5 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.3 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_145 a :c58,
+        owl:NamedIndividual ;
+    :Id "146"^^xsd:string ;
+    :PetalLengthCm 5.2 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_146 a :c76,
+        owl:NamedIndividual ;
+    :Id "147"^^xsd:string ;
+    :PetalLengthCm 5.0 ;
+    :PetalWidthCm 1.9 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_147 a :c58,
+        owl:NamedIndividual ;
+    :Id "148"^^xsd:string ;
+    :PetalLengthCm 5.2 ;
+    :PetalWidthCm 2.0 ;
+    :SepalLengthCm 6.5 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_148 a :c85,
+        owl:NamedIndividual ;
+    :Id "149"^^xsd:string ;
+    :PetalLengthCm 5.4 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 6.2 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_149 a :c60,
+        owl:NamedIndividual ;
+    :Id "150"^^xsd:string ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 5.9 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_15 a :c19,
+        owl:NamedIndividual ;
+    :Id "16"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 4.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_16 a :c19,
+        owl:NamedIndividual ;
+    :Id "17"^^xsd:string ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.4 ;
+    :SepalWidthCm 3.9 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_17 a :c47,
+        owl:NamedIndividual ;
+    :Id "18"^^xsd:string ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.5 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_18 a :c19,
+        owl:NamedIndividual ;
+    :Id "19"^^xsd:string ;
+    :PetalLengthCm 1.7 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 3.8 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_19 a :c47,
+        owl:NamedIndividual ;
+    :Id "20"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.8 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_2 a :c47,
+        owl:NamedIndividual ;
+    :Id "3"^^xsd:string ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.7 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_20 a :c19,
+        owl:NamedIndividual ;
+    :Id "21"^^xsd:string ;
+    :PetalLengthCm 1.7 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.4 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_21 a :c47,
+        owl:NamedIndividual ;
+    :Id "22"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.7 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_22 a :c47,
+        owl:NamedIndividual ;
+    :Id "23"^^xsd:string ;
+    :PetalLengthCm 1.0 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.6 ;
+    :SepalWidthCm 3.6 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_23 a :c47,
+        owl:NamedIndividual ;
+    :Id "24"^^xsd:string ;
+    :PetalLengthCm 1.7 ;
+    :PetalWidthCm 0.5 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.3 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_24 a :c47,
+        owl:NamedIndividual ;
+    :Id "25"^^xsd:string ;
+    :PetalLengthCm 1.9 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.8 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_25 a :c12,
+        owl:NamedIndividual ;
+    :Id "26"^^xsd:string ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_26 a :c47,
+        owl:NamedIndividual ;
+    :Id "27"^^xsd:string ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_27 a :c47,
+        owl:NamedIndividual ;
+    :Id "28"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.2 ;
+    :SepalWidthCm 3.5 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_28 a :c47,
+        owl:NamedIndividual ;
+    :Id "29"^^xsd:string ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.2 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_29 a :c47,
+        owl:NamedIndividual ;
+    :Id "30"^^xsd:string ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.7 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_3 a :c12,
+        owl:NamedIndividual ;
+    :Id "4"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.6 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_30 a :c12,
+        owl:NamedIndividual ;
+    :Id "31"^^xsd:string ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.8 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_31 a :c19,
+        owl:NamedIndividual ;
+    :Id "32"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.4 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_32 a :c47,
+        owl:NamedIndividual ;
+    :Id "33"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.1 ;
+    :SepalLengthCm 5.2 ;
+    :SepalWidthCm 4.1 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_33 a :c19,
+        owl:NamedIndividual ;
+    :Id "34"^^xsd:string ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 4.2 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_34 a :c12,
+        owl:NamedIndividual ;
+    :Id "35"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.1 ;
+    :SepalLengthCm 4.9 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_35 a :c47,
+        owl:NamedIndividual ;
+    :Id "36"^^xsd:string ;
+    :PetalLengthCm 1.2 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_36 a :c19,
+        owl:NamedIndividual ;
+    :Id "37"^^xsd:string ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 3.5 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_37 a :c12,
+        owl:NamedIndividual ;
+    :Id "38"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.1 ;
+    :SepalLengthCm 4.9 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_38 a :c12,
+        owl:NamedIndividual ;
+    :Id "39"^^xsd:string ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.4 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_39 a :c47,
+        owl:NamedIndividual ;
+    :Id "40"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_4 a :c47,
+        owl:NamedIndividual ;
+    :Id "5"^^xsd:string ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.6 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_40 a :c47,
+        owl:NamedIndividual ;
+    :Id "41"^^xsd:string ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.5 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_41 a :c20,
+        owl:NamedIndividual ;
+    :Id "42"^^xsd:string ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 4.5 ;
+    :SepalWidthCm 2.3 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_42 a :c47,
+        owl:NamedIndividual ;
+    :Id "43"^^xsd:string ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.4 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_43 a :c47,
+        owl:NamedIndividual ;
+    :Id "44"^^xsd:string ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.6 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.5 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_44 a :c47,
+        owl:NamedIndividual ;
+    :Id "45"^^xsd:string ;
+    :PetalLengthCm 1.9 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.8 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_45 a :c12,
+        owl:NamedIndividual ;
+    :Id "46"^^xsd:string ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 4.8 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_46 a :c47,
+        owl:NamedIndividual ;
+    :Id "47"^^xsd:string ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.8 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_47 a :c47,
+        owl:NamedIndividual ;
+    :Id "48"^^xsd:string ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.6 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_48 a :c47,
+        owl:NamedIndividual ;
+    :Id "49"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.3 ;
+    :SepalWidthCm 3.7 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_49 a :c47,
+        owl:NamedIndividual ;
+    :Id "50"^^xsd:string ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.3 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_5 a :c19,
+        owl:NamedIndividual ;
+    :Id "6"^^xsd:string ;
+    :PetalLengthCm 1.7 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.4 ;
+    :SepalWidthCm 3.9 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_50 a :c28,
+        owl:NamedIndividual ;
+    :Id "51"^^xsd:string ;
+    :PetalLengthCm 4.7 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 7.0 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_51 a :c28,
+        owl:NamedIndividual ;
+    :Id "52"^^xsd:string ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_52 a :c55,
+        owl:NamedIndividual ;
+    :Id "53"^^xsd:string ;
+    :PetalLengthCm 4.9 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.9 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_53 a :c92,
+        owl:NamedIndividual ;
+    :Id "54"^^xsd:string ;
+    :PetalLengthCm 4.0 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 2.3 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_54 a :c72,
+        owl:NamedIndividual ;
+    :Id "55"^^xsd:string ;
+    :PetalLengthCm 4.6 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.5 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_55 a :c92,
+        owl:NamedIndividual ;
+    :Id "56"^^xsd:string ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_56 a :c74,
+        owl:NamedIndividual ;
+    :Id "57"^^xsd:string ;
+    :PetalLengthCm 4.7 ;
+    :PetalWidthCm 1.6 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 3.3 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_57 a :c27,
+        owl:NamedIndividual ;
+    :Id "58"^^xsd:string ;
+    :PetalLengthCm 3.3 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 4.9 ;
+    :SepalWidthCm 2.4 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_58 a :c56,
+        owl:NamedIndividual ;
+    :Id "59"^^xsd:string ;
+    :PetalLengthCm 4.6 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 6.6 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_59 a :c27,
+        owl:NamedIndividual ;
+    :Id "60"^^xsd:string ;
+    :PetalLengthCm 3.9 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 5.2 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_6 a :c47,
+        owl:NamedIndividual ;
+    :Id "7"^^xsd:string ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 4.6 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_60 a :c27,
+        owl:NamedIndividual ;
+    :Id "61"^^xsd:string ;
+    :PetalLengthCm 3.5 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 2.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_61 a :c53,
+        owl:NamedIndividual ;
+    :Id "62"^^xsd:string ;
+    :PetalLengthCm 4.2 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 5.9 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_62 a :c92,
+        owl:NamedIndividual ;
+    :Id "63"^^xsd:string ;
+    :PetalLengthCm 4.0 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 6.0 ;
+    :SepalWidthCm 2.2 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_63 a :c53,
+        owl:NamedIndividual ;
+    :Id "64"^^xsd:string ;
+    :PetalLengthCm 4.7 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 6.1 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_64 a :c53,
+        owl:NamedIndividual ;
+    :Id "65"^^xsd:string ;
+    :PetalLengthCm 3.6 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.6 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_65 a :c56,
+        owl:NamedIndividual ;
+    :Id "66"^^xsd:string ;
+    :PetalLengthCm 4.4 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_66 a :c53,
+        owl:NamedIndividual ;
+    :Id "67"^^xsd:string ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 5.6 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_67 a :c92,
+        owl:NamedIndividual ;
+    :Id "68"^^xsd:string ;
+    :PetalLengthCm 4.1 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_68 a :c92,
+        owl:NamedIndividual ;
+    :Id "69"^^xsd:string ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.2 ;
+    :SepalWidthCm 2.2 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_69 a :c92,
+        owl:NamedIndividual ;
+    :Id "70"^^xsd:string ;
+    :PetalLengthCm 3.9 ;
+    :PetalWidthCm 1.1 ;
+    :SepalLengthCm 5.6 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_7 a :c47,
+        owl:NamedIndividual ;
+    :Id "8"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_70 a :c81,
+        owl:NamedIndividual ;
+    :Id "71"^^xsd:string ;
+    :PetalLengthCm 4.8 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 5.9 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_71 a :c92,
+        owl:NamedIndividual ;
+    :Id "72"^^xsd:string ;
+    :PetalLengthCm 4.0 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 6.1 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_72 a :c91,
+        owl:NamedIndividual ;
+    :Id "73"^^xsd:string ;
+    :PetalLengthCm 4.9 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_73 a :c92,
+        owl:NamedIndividual ;
+    :Id "74"^^xsd:string ;
+    :PetalLengthCm 4.7 ;
+    :PetalWidthCm 1.2 ;
+    :SepalLengthCm 6.1 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_74 a :c56,
+        owl:NamedIndividual ;
+    :Id "75"^^xsd:string ;
+    :PetalLengthCm 4.3 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_75 a :c56,
+        owl:NamedIndividual ;
+    :Id "76"^^xsd:string ;
+    :PetalLengthCm 4.4 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 6.6 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_76 a :c72,
+        owl:NamedIndividual ;
+    :Id "77"^^xsd:string ;
+    :PetalLengthCm 4.8 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 6.8 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_77 a :c58,
+        owl:NamedIndividual ;
+    :Id "78"^^xsd:string ;
+    :PetalLengthCm 5.0 ;
+    :PetalWidthCm 1.7 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_78 a :c53,
+        owl:NamedIndividual ;
+    :Id "79"^^xsd:string ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.0 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_79 a :c92,
+        owl:NamedIndividual ;
+    :Id "80"^^xsd:string ;
+    :PetalLengthCm 3.5 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 2.6 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_8 a :c12,
+        owl:NamedIndividual ;
+    :Id "9"^^xsd:string ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.4 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_80 a :c92,
+        owl:NamedIndividual ;
+    :Id "81"^^xsd:string ;
+    :PetalLengthCm 3.8 ;
+    :PetalWidthCm 1.1 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 2.4 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_81 a :c92,
+        owl:NamedIndividual ;
+    :Id "82"^^xsd:string ;
+    :PetalLengthCm 3.7 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 2.4 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_82 a :c92,
+        owl:NamedIndividual ;
+    :Id "83"^^xsd:string ;
+    :PetalLengthCm 3.9 ;
+    :PetalWidthCm 1.2 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_83 a :c94,
+        owl:NamedIndividual ;
+    :Id "84"^^xsd:string ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 1.6 ;
+    :SepalLengthCm 6.0 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_84 a :c53,
+        owl:NamedIndividual ;
+    :Id "85"^^xsd:string ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 5.4 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_85 a :c81,
+        owl:NamedIndividual ;
+    :Id "86"^^xsd:string ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.6 ;
+    :SepalLengthCm 6.0 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_86 a :c56,
+        owl:NamedIndividual ;
+    :Id "87"^^xsd:string ;
+    :PetalLengthCm 4.7 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_87 a :c72,
+        owl:NamedIndividual ;
+    :Id "88"^^xsd:string ;
+    :PetalLengthCm 4.4 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 2.3 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_88 a :c53,
+        owl:NamedIndividual ;
+    :Id "89"^^xsd:string ;
+    :PetalLengthCm 4.1 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.6 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_89 a :c92,
+        owl:NamedIndividual ;
+    :Id "90"^^xsd:string ;
+    :PetalLengthCm 4.0 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_9 a :c12,
+        owl:NamedIndividual ;
+    :Id "10"^^xsd:string ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.1 ;
+    :SepalLengthCm 4.9 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_90 a :c92,
+        owl:NamedIndividual ;
+    :Id "91"^^xsd:string ;
+    :PetalLengthCm 4.4 ;
+    :PetalWidthCm 1.2 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 2.6 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_91 a :c53,
+        owl:NamedIndividual ;
+    :Id "92"^^xsd:string ;
+    :PetalLengthCm 4.6 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 6.1 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_92 a :c92,
+        owl:NamedIndividual ;
+    :Id "93"^^xsd:string ;
+    :PetalLengthCm 4.0 ;
+    :PetalWidthCm 1.2 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 2.6 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_93 a :c27,
+        owl:NamedIndividual ;
+    :Id "94"^^xsd:string ;
+    :PetalLengthCm 3.3 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 2.3 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_94 a :c92,
+        owl:NamedIndividual ;
+    :Id "95"^^xsd:string ;
+    :PetalLengthCm 4.2 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.6 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_95 a :c53,
+        owl:NamedIndividual ;
+    :Id "96"^^xsd:string ;
+    :PetalLengthCm 4.2 ;
+    :PetalWidthCm 1.2 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_96 a :c53,
+        owl:NamedIndividual ;
+    :Id "97"^^xsd:string ;
+    :PetalLengthCm 4.2 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_97 a :c53,
+        owl:NamedIndividual ;
+    :Id "98"^^xsd:string ;
+    :PetalLengthCm 4.3 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 6.2 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_98 a :c27,
+        owl:NamedIndividual ;
+    :Id "99"^^xsd:string ;
+    :PetalLengthCm 3.0 ;
+    :PetalWidthCm 1.1 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_99 a :c92,
+        owl:NamedIndividual ;
+    :Id "100"^^xsd:string ;
+    :PetalLengthCm 4.1 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-versicolor .
+
+:Id a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+:Species a owl:ObjectProperty .
+
+:c20 a owl:Class ;
+    rdfs:label "c20" ;
+    rdfs:subClassOf :c21,
+        :c44 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.3 ] [ xsd:maxExclusive 5.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.1 ] [ xsd:maxExclusive 0.8666666666666629 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.0 ] [ xsd:maxExclusive 2.633333333333323 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c48 a owl:Class ;
+    rdfs:label "c48" ;
+    rdfs:subClassOf :c41,
+        :c88 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.3 ] [ xsd:maxExclusive 5.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c55 a owl:Class ;
+    rdfs:label "c55" ;
+    rdfs:subClassOf :c52,
+        :c57,
+        :c66 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c62 a owl:Class ;
+    rdfs:label "c62" ;
+    rdfs:subClassOf :c59,
+        :c61,
+        :c82 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c74 a owl:Class ;
+    rdfs:label "c74" ;
+    rdfs:subClassOf :c73,
+        :c78,
+        :c89 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c85 a owl:Class ;
+    rdfs:label "c85" ;
+    rdfs:subClassOf :c49,
+        :c86,
+        :c87 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c93 a owl:Class ;
+    rdfs:label "c93" ;
+    rdfs:subClassOf :c80,
+        :c82,
+        :c84,
+        :c88 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c02 a owl:Class ;
+    rdfs:label "c02" ;
+    rdfs:subClassOf :Root ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.1 ] [ xsd:maxExclusive 0.8666666666666629 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.0 ] [ xsd:maxExclusive 2.633333333333323 ] ) ] ] ) ] .
+
+:c08 a owl:Class ;
+    rdfs:label "c08" ;
+    rdfs:subClassOf :Root ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :SepalLengthCm ;
+            owl:someValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:decimal ;
+                    owl:withRestrictions ( [ xsd:minInclusive 4.3 ] [ xsd:maxExclusive 5.4 ] ) ] ] .
+
+:c13 a owl:Class ;
+    rdfs:label "c13" ;
+    rdfs:subClassOf :c01,
+        :c03 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] ) ] .
+
+:c14 a owl:Class ;
+    rdfs:label "c14" ;
+    rdfs:subClassOf :c01,
+        :c04 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c15 a owl:Class ;
+    rdfs:label "c15" ;
+    rdfs:subClassOf :c01,
+        :c05 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c16 a owl:Class ;
+    rdfs:label "c16" ;
+    rdfs:subClassOf :c01,
+        :c06 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] ) ] .
+
+:c17 a owl:Class ;
+    rdfs:label "c17" ;
+    rdfs:subClassOf :c01,
+        :c10 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] ) ] .
+
+:c18 a owl:Class ;
+    rdfs:label "c18" ;
+    rdfs:subClassOf :c01,
+        :c11 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] ) ] .
+
+:c22 a owl:Class ;
+    rdfs:label "c22" ;
+    rdfs:subClassOf :c02,
+        :c09 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.1 ] [ xsd:maxExclusive 0.8666666666666629 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.0 ] [ xsd:maxExclusive 2.633333333333323 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] ) ] .
+
+:c24 a owl:Class ;
+    rdfs:label "c24" ;
+    rdfs:subClassOf :c03,
+        :c05 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c28 a owl:Class ;
+    rdfs:label "c28" ;
+    rdfs:subClassOf :c64,
+        :c73 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c29 a owl:Class ;
+    rdfs:label "c29" ;
+    rdfs:subClassOf :c03,
+        :c10 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] ) ] .
+
+:c30 a owl:Class ;
+    rdfs:label "c30" ;
+    rdfs:subClassOf :c04,
+        :c06 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c31 a owl:Class ;
+    rdfs:label "c31" ;
+    rdfs:subClassOf :c04,
+        :c07 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c32 a owl:Class ;
+    rdfs:label "c32" ;
+    rdfs:subClassOf :c04,
+        :c09 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c34 a owl:Class ;
+    rdfs:label "c34" ;
+    rdfs:subClassOf :c04,
+        :c11 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c37 a owl:Class ;
+    rdfs:label "c37" ;
+    rdfs:subClassOf :c05,
+        :c09 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c38 a owl:Class ;
+    rdfs:label "c38" ;
+    rdfs:subClassOf :c05,
+        :c10 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c41 a owl:Class ;
+    rdfs:label "c41" ;
+    rdfs:subClassOf :c40,
+        :c44 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.3 ] [ xsd:maxExclusive 5.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c42 a owl:Class ;
+    rdfs:label "c42" ;
+    rdfs:subClassOf :c06,
+        :c09 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] ) ] .
+
+:c44 a owl:Class ;
+    rdfs:label "c44" ;
+    rdfs:subClassOf :c07,
+        :c08 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.3 ] [ xsd:maxExclusive 5.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c49 a owl:Class ;
+    rdfs:label "c49" ;
+    rdfs:subClassOf :c50,
+        :c51 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] ) ] .
+
+:c52 a owl:Class ;
+    rdfs:label "c52" ;
+    rdfs:subClassOf :c13,
+        :c14,
+        :c23 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c54 a owl:Class ;
+    rdfs:label "c54" ;
+    rdfs:subClassOf :c13,
+        :c16,
+        :c25 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] ) ] .
+
+:c57 a owl:Class ;
+    rdfs:label "c57" ;
+    rdfs:subClassOf :c14,
+        :c17,
+        :c33 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c59 a owl:Class ;
+    rdfs:label "c59" ;
+    rdfs:subClassOf :c15,
+        :c16,
+        :c35 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c60 a owl:Class ;
+    rdfs:label "c60" ;
+    rdfs:subClassOf :c61,
+        :c63,
+        :c87 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c61 a owl:Class ;
+    rdfs:label "c61" ;
+    rdfs:subClassOf :c15,
+        :c18,
+        :c39 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c63 a owl:Class ;
+    rdfs:label "c63" ;
+    rdfs:subClassOf :c17,
+        :c18,
+        :c51 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] ) ] .
+
+:c65 a owl:Class ;
+    rdfs:label "c65" ;
+    rdfs:subClassOf :c23,
+        :c26,
+        :c31 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c66 a owl:Class ;
+    rdfs:label "c66" ;
+    rdfs:subClassOf :c23,
+        :c29,
+        :c33 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c67 a owl:Class ;
+    rdfs:label "c67" ;
+    rdfs:subClassOf :c24,
+        :c25,
+        :c35 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c68 a owl:Class ;
+    rdfs:label "c68" ;
+    rdfs:subClassOf :c24,
+        :c26,
+        :c36 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c69 a owl:Class ;
+    rdfs:label "c69" ;
+    rdfs:subClassOf :c68,
+        :c71,
+        :c83 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c71 a owl:Class ;
+    rdfs:label "c71" ;
+    rdfs:subClassOf :c26,
+        :c29,
+        :c45 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c73 a owl:Class ;
+    rdfs:label "c73" ;
+    rdfs:subClassOf :c30,
+        :c32,
+        :c42 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c75 a owl:Class ;
+    rdfs:label "c75" ;
+    rdfs:subClassOf :c31,
+        :c33,
+        :c45 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c78 a owl:Class ;
+    rdfs:label "c78" ;
+    rdfs:subClassOf :c32,
+        :c34,
+        :c50 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c80 a owl:Class ;
+    rdfs:label "c80" ;
+    rdfs:subClassOf :c35,
+        :c36,
+        :c40 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c81 a owl:Class ;
+    rdfs:label "c81" ;
+    rdfs:subClassOf :c82,
+        :c86,
+        :c89 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c83 a owl:Class ;
+    rdfs:label "c83" ;
+    rdfs:subClassOf :c36,
+        :c38,
+        :c45 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c84 a owl:Class ;
+    rdfs:label "c84" ;
+    rdfs:subClassOf :c36,
+        :c39,
+        :c46 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c86 a owl:Class ;
+    rdfs:label "c86" ;
+    rdfs:subClassOf :c37,
+        :c39,
+        :c50 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c88 a owl:Class ;
+    rdfs:label "c88" ;
+    rdfs:subClassOf :c40,
+        :c43,
+        :c46 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c89 a owl:Class ;
+    rdfs:label "c89" ;
+    rdfs:subClassOf :c42,
+        :c43,
+        :c50 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] ) ] .
+
+:c90 a owl:Class ;
+    rdfs:label "c90" ;
+    rdfs:subClassOf :c45,
+        :c46,
+        :c51 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c91 a owl:Class ;
+    rdfs:label "c91" ;
+    rdfs:subClassOf :c65,
+        :c66,
+        :c71,
+        :c75 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c21 a owl:Class ;
+    rdfs:label "c21" ;
+    rdfs:subClassOf :c02,
+        :c08 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.3 ] [ xsd:maxExclusive 5.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.1 ] [ xsd:maxExclusive 0.8666666666666629 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.0 ] [ xsd:maxExclusive 2.633333333333323 ] ) ] ] ) ] .
+
+:c43 a owl:Class ;
+    rdfs:label "c43" ;
+    rdfs:subClassOf :c06,
+        :c11 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] ) ] .
+
+:c46 a owl:Class ;
+    rdfs:label "c46" ;
+    rdfs:subClassOf :c07,
+        :c11 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c64 a owl:Class ;
+    rdfs:label "c64" ;
+    rdfs:subClassOf :c23,
+        :c25,
+        :c30 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c70 a owl:Class ;
+    rdfs:label "c70" ;
+    rdfs:subClassOf :c25,
+        :c26,
+        :c40 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c72 a owl:Class ;
+    rdfs:label "c72" ;
+    rdfs:subClassOf :c64,
+        :c65,
+        :c70 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c79 a owl:Class ;
+    rdfs:label "c79" ;
+    rdfs:subClassOf :c33,
+        :c34,
+        :c51 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c82 a owl:Class ;
+    rdfs:label "c82" ;
+    rdfs:subClassOf :c35,
+        :c39,
+        :c43 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c87 a owl:Class ;
+    rdfs:label "c87" ;
+    rdfs:subClassOf :c38,
+        :c39,
+        :c51 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c23 a owl:Class ;
+    rdfs:label "c23" ;
+    rdfs:subClassOf :c03,
+        :c04 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c25 a owl:Class ;
+    rdfs:label "c25" ;
+    rdfs:subClassOf :c03,
+        :c06 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] ) ] .
+
+:c26 a owl:Class ;
+    rdfs:label "c26" ;
+    rdfs:subClassOf :c03,
+        :c07 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c33 a owl:Class ;
+    rdfs:label "c33" ;
+    rdfs:subClassOf :c04,
+        :c10 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c35 a owl:Class ;
+    rdfs:label "c35" ;
+    rdfs:subClassOf :c05,
+        :c06 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c36 a owl:Class ;
+    rdfs:label "c36" ;
+    rdfs:subClassOf :c05,
+        :c07 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c40 a owl:Class ;
+    rdfs:label "c40" ;
+    rdfs:subClassOf :c06,
+        :c07 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c45 a owl:Class ;
+    rdfs:label "c45" ;
+    rdfs:subClassOf :c07,
+        :c10 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c50 a owl:Class ;
+    rdfs:label "c50" ;
+    rdfs:subClassOf :c09,
+        :c11 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] ) ] .
+
+:c09 a owl:Class ;
+    rdfs:label "c09" ;
+    rdfs:subClassOf :Root ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :SepalWidthCm ;
+            owl:someValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:decimal ;
+                    owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] .
+
+:c27 a owl:Class ;
+    rdfs:label "c27" ;
+    rdfs:subClassOf :c41,
+        :c70 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.3 ] [ xsd:maxExclusive 5.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c39 a owl:Class ;
+    rdfs:label "c39" ;
+    rdfs:subClassOf :c05,
+        :c11 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c51 a owl:Class ;
+    rdfs:label "c51" ;
+    rdfs:subClassOf :c10,
+        :c11 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] ) ] .
+
+:c56 a owl:Class ;
+    rdfs:label "c56" ;
+    rdfs:subClassOf :c52,
+        :c54,
+        :c64 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c03 a owl:Class ;
+    rdfs:label "c03" ;
+    rdfs:subClassOf :Root ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :PetalWidthCm ;
+            owl:someValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:decimal ;
+                    owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] .
+
+:c10 a owl:Class ;
+    rdfs:label "c10" ;
+    rdfs:subClassOf :Root ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :PetalLengthCm ;
+            owl:someValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:decimal ;
+                    owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] .
+
+:c94 a owl:Class ;
+    rdfs:label "c94" ;
+    rdfs:subClassOf :c83,
+        :c84,
+        :c87,
+        :c90 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c01 a owl:Class ;
+    rdfs:label "c01" ;
+    rdfs:subClassOf :Root ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :SepalWidthCm ;
+            owl:someValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:decimal ;
+                    owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] .
+
+:c04 a owl:Class ;
+    rdfs:label "c04" ;
+    rdfs:subClassOf :Root ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :SepalLengthCm ;
+            owl:someValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:decimal ;
+                    owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] .
+
+:c05 a owl:Class ;
+    rdfs:label "c05" ;
+    rdfs:subClassOf :Root ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :SepalLengthCm ;
+            owl:someValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:decimal ;
+                    owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] .
+
+:c06 a owl:Class ;
+    rdfs:label "c06" ;
+    rdfs:subClassOf :Root ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :PetalLengthCm ;
+            owl:someValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:decimal ;
+                    owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] .
+
+:c07 a owl:Class ;
+    rdfs:label "c07" ;
+    rdfs:subClassOf :Root ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :SepalWidthCm ;
+            owl:someValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:decimal ;
+                    owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] .
+
+:c11 a owl:Class ;
+    rdfs:label "c11" ;
+    rdfs:subClassOf :Root ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty :PetalWidthCm ;
+            owl:someValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:decimal ;
+                    owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] .
+
+:c76 a owl:Class ;
+    rdfs:label "c76" ;
+    rdfs:subClassOf :c75,
+        :c79,
+        :c90 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c19 a owl:Class ;
+    rdfs:label "c19" ;
+    rdfs:subClassOf :c22,
+        :c37 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.1 ] [ xsd:maxExclusive 0.8666666666666629 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.0 ] [ xsd:maxExclusive 2.633333333333323 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:Root a owl:Class ;
+    rdfs:label "Root" ;
+    rdfs:subClassOf owl:Thing .
+
+:c53 a owl:Class ;
+    rdfs:label "c53" ;
+    rdfs:subClassOf :c54,
+        :c59,
+        :c67 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] ) ] .
+
+:c12 a owl:Class ;
+    rdfs:label "c12" ;
+    rdfs:subClassOf :c01,
+        :c21 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.3 ] [ xsd:maxExclusive 5.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.1 ] [ xsd:maxExclusive 0.8666666666666629 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.0 ] [ xsd:maxExclusive 2.633333333333323 ] ) ] ] ) ] .
+
+:c77 a owl:Class ;
+    rdfs:label "c77" ;
+    rdfs:subClassOf :c49,
+        :c78,
+        :c79 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c58 a owl:Class ;
+    rdfs:label "c58" ;
+    rdfs:subClassOf :c57,
+        :c63,
+        :c79 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.9 ] [ xsd:maxInclusive 6.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.9 ] [ xsd:maxExclusive 3.2 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.6 ] [ xsd:maxInclusive 2.5 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 6.3 ] [ xsd:maxInclusive 7.9 ] ) ] ] ) ] .
+
+:c92 a owl:Class ;
+    rdfs:label "c92" ;
+    rdfs:subClassOf :c67,
+        :c68,
+        :c70,
+        :c80 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.633333333333323 ] [ xsd:maxExclusive 4.9 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 5.4 ] [ xsd:maxExclusive 6.3 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.8666666666666629 ] [ xsd:maxExclusive 1.6 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 2.0 ] [ xsd:maxExclusive 2.9 ] ) ] ] ) ] .
+
+:c47 a owl:Class ;
+    rdfs:label "c47" ;
+    rdfs:subClassOf :c21,
+        :c22 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onProperty :SepalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.3 ] [ xsd:maxExclusive 5.4 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0.1 ] [ xsd:maxExclusive 0.8666666666666629 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.0 ] [ xsd:maxExclusive 2.633333333333323 ] ) ] ] [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.2 ] [ xsd:maxInclusive 4.4 ] ) ] ] ) ] .
+
+:Species_Iris-setosa a owl:NamedIndividual ;
+    rdfs:label "Iris-setosa" .
+
+:Species_Iris-versicolor a owl:NamedIndividual ;
+    rdfs:label "Iris-versicolor" .
+
+:Species_Iris-virginica a owl:NamedIndividual ;
+    rdfs:label "Iris-virginica" .
+
+:PetalLengthCm a owl:DatatypeProperty ;
+    rdfs:range xsd:decimal .
+
+:PetalWidthCm a owl:DatatypeProperty ;
+    rdfs:range xsd:decimal .
+
+:SepalLengthCm a owl:DatatypeProperty ;
+    rdfs:range xsd:decimal .
+
+:SepalWidthCm a owl:DatatypeProperty ;
+    rdfs:range xsd:decimal .
+

@@ -1,0 +1,37 @@
+{
+  "columns": {
+    "Id": {
+      "type": "title_id",
+      "include": false
+    },
+    "SepalLengthCm": {
+      "type": "numeric",
+      "include": true
+    },
+    "SepalWidthCm": {
+      "type": "numeric",
+      "include": true
+    },
+    "PetalLengthCm": {
+      "type": "numeric",
+      "include": true
+    },
+    "PetalWidthCm": {
+      "type": "numeric",
+      "include": true
+    },
+    "Species": {
+      "type": "categorical",
+      "include": false
+    }
+  },
+  "fca": {
+    "max_depth": 20,
+    "discretize": {
+      "n_bins": 3,
+      "strategy": "quantile"
+    },
+    "concept_ns": "http://example.org/iris/schema#",
+    "entity_ns": "http://example.org/iris/data/"
+  }
+}

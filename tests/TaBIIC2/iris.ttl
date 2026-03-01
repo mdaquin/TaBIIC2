@@ -1,0 +1,2051 @@
+@prefix : <http://example.org/iris/schema#> .
+@prefix ent: <http://example.org/iris/data/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ent:entity_0 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 1.0 ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.5 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_1 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 2.0 ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.9 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_10 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 11.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.4 ;
+    :SepalWidthCm 3.7 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_100 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 101.0 ;
+    :PetalLengthCm 6.0 ;
+    :PetalWidthCm 2.5 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 3.3 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_101 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 102.0 ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 1.9 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_102 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 103.0 ;
+    :PetalLengthCm 5.9 ;
+    :PetalWidthCm 2.1 ;
+    :SepalLengthCm 7.1 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_103 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 104.0 ;
+    :PetalLengthCm 5.6 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_104 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 105.0 ;
+    :PetalLengthCm 5.8 ;
+    :PetalWidthCm 2.2 ;
+    :SepalLengthCm 6.5 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_105 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 106.0 ;
+    :PetalLengthCm 6.6 ;
+    :PetalWidthCm 2.1 ;
+    :SepalLengthCm 7.6 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_106 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 107.0 ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.7 ;
+    :SepalLengthCm 4.9 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_107 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 108.0 ;
+    :PetalLengthCm 6.3 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 7.3 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_108 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 109.0 ;
+    :PetalLengthCm 5.8 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_109 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 110.0 ;
+    :PetalLengthCm 6.1 ;
+    :PetalWidthCm 2.5 ;
+    :SepalLengthCm 7.2 ;
+    :SepalWidthCm 3.6 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_11 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 12.0 ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.8 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_110 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 111.0 ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 2.0 ;
+    :SepalLengthCm 6.5 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_111 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 112.0 ;
+    :PetalLengthCm 5.3 ;
+    :PetalWidthCm 1.9 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_112 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 113.0 ;
+    :PetalLengthCm 5.5 ;
+    :PetalWidthCm 2.1 ;
+    :SepalLengthCm 6.8 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_113 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 114.0 ;
+    :PetalLengthCm 5.0 ;
+    :PetalWidthCm 2.0 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_114 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 115.0 ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 2.4 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_115 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 116.0 ;
+    :PetalLengthCm 5.3 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_116 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 117.0 ;
+    :PetalLengthCm 5.5 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.5 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_117 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 118.0 ;
+    :PetalLengthCm 6.7 ;
+    :PetalWidthCm 2.2 ;
+    :SepalLengthCm 7.7 ;
+    :SepalWidthCm 3.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_118 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 119.0 ;
+    :PetalLengthCm 6.9 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 7.7 ;
+    :SepalWidthCm 2.6 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_119 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 120.0 ;
+    :PetalLengthCm 5.0 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.0 ;
+    :SepalWidthCm 2.2 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_12 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 13.0 ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.1 ;
+    :SepalLengthCm 4.8 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_120 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 121.0 ;
+    :PetalLengthCm 5.7 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 6.9 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_121 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 122.0 ;
+    :PetalLengthCm 4.9 ;
+    :PetalWidthCm 2.0 ;
+    :SepalLengthCm 5.6 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_122 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 123.0 ;
+    :PetalLengthCm 6.7 ;
+    :PetalWidthCm 2.0 ;
+    :SepalLengthCm 7.7 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_123 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 124.0 ;
+    :PetalLengthCm 4.9 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_124 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 125.0 ;
+    :PetalLengthCm 5.7 ;
+    :PetalWidthCm 2.1 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.3 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_125 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 126.0 ;
+    :PetalLengthCm 6.0 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 7.2 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_126 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 127.0 ;
+    :PetalLengthCm 4.8 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.2 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_127 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 128.0 ;
+    :PetalLengthCm 4.9 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.1 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_128 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 129.0 ;
+    :PetalLengthCm 5.6 ;
+    :PetalWidthCm 2.1 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_129 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 130.0 ;
+    :PetalLengthCm 5.8 ;
+    :PetalWidthCm 1.6 ;
+    :SepalLengthCm 7.2 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_13 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 14.0 ;
+    :PetalLengthCm 1.1 ;
+    :PetalWidthCm 0.1 ;
+    :SepalLengthCm 4.3 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_130 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 131.0 ;
+    :PetalLengthCm 6.1 ;
+    :PetalWidthCm 1.9 ;
+    :SepalLengthCm 7.4 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_131 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 132.0 ;
+    :PetalLengthCm 6.4 ;
+    :PetalWidthCm 2.0 ;
+    :SepalLengthCm 7.9 ;
+    :SepalWidthCm 3.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_132 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 133.0 ;
+    :PetalLengthCm 5.6 ;
+    :PetalWidthCm 2.2 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_133 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 134.0 ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_134 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 135.0 ;
+    :PetalLengthCm 5.6 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 6.1 ;
+    :SepalWidthCm 2.6 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_135 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 136.0 ;
+    :PetalLengthCm 6.1 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 7.7 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_136 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 137.0 ;
+    :PetalLengthCm 5.6 ;
+    :PetalWidthCm 2.4 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_137 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 138.0 ;
+    :PetalLengthCm 5.5 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_138 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 139.0 ;
+    :PetalLengthCm 4.8 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 6.0 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_139 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 140.0 ;
+    :PetalLengthCm 5.4 ;
+    :PetalWidthCm 2.1 ;
+    :SepalLengthCm 6.9 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_14 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 15.0 ;
+    :PetalLengthCm 1.2 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 4.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_140 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 141.0 ;
+    :PetalLengthCm 5.6 ;
+    :PetalWidthCm 2.4 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_141 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 142.0 ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 6.9 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_142 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 143.0 ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 1.9 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_143 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 144.0 ;
+    :PetalLengthCm 5.9 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 6.8 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_144 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 145.0 ;
+    :PetalLengthCm 5.7 ;
+    :PetalWidthCm 2.5 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.3 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_145 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 146.0 ;
+    :PetalLengthCm 5.2 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_146 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 147.0 ;
+    :PetalLengthCm 5.0 ;
+    :PetalWidthCm 1.9 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_147 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 148.0 ;
+    :PetalLengthCm 5.2 ;
+    :PetalWidthCm 2.0 ;
+    :SepalLengthCm 6.5 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_148 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 149.0 ;
+    :PetalLengthCm 5.4 ;
+    :PetalWidthCm 2.3 ;
+    :SepalLengthCm 6.2 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_149 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 150.0 ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 5.9 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-virginica .
+
+ent:entity_15 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 16.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 4.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_16 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 17.0 ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.4 ;
+    :SepalWidthCm 3.9 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_17 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 18.0 ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.5 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_18 a :Iris,
+        :MediumShortPetalIris,
+        :MerdiumLengthPetalIris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 19.0 ;
+    :PetalLengthCm 1.7 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 3.8 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_19 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 20.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.8 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_2 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 3.0 ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.7 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_20 a :Iris,
+        :MediumShortPetalIris,
+        :MerdiumLengthPetalIris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 21.0 ;
+    :PetalLengthCm 1.7 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.4 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_21 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 22.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.7 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_22 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 23.0 ;
+    :PetalLengthCm 1.0 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.6 ;
+    :SepalWidthCm 3.6 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_23 a :Iris,
+        :MediumShortPetalIris,
+        :MerdiumLengthPetalIris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 24.0 ;
+    :PetalLengthCm 1.7 ;
+    :PetalWidthCm 0.5 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.3 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_24 a :Iris,
+        :MediumShortPetalIris,
+        :MerdiumLengthPetalIris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 25.0 ;
+    :PetalLengthCm 1.9 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.8 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_25 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 26.0 ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_26 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 27.0 ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_27 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 28.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.2 ;
+    :SepalWidthCm 3.5 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_28 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 29.0 ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.2 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_29 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 30.0 ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.7 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_3 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 4.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.6 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_30 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 31.0 ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.8 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_31 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 32.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.4 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_32 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 33.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.1 ;
+    :SepalLengthCm 5.2 ;
+    :SepalWidthCm 4.1 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_33 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 34.0 ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 4.2 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_34 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 35.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.1 ;
+    :SepalLengthCm 4.9 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_35 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 36.0 ;
+    :PetalLengthCm 1.2 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_36 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 37.0 ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 3.5 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_37 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 38.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.1 ;
+    :SepalLengthCm 4.9 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_38 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 39.0 ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.4 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_39 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 40.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_4 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 5.0 ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.6 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_40 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 41.0 ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.5 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_41 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 42.0 ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 4.5 ;
+    :SepalWidthCm 2.3 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_42 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 43.0 ;
+    :PetalLengthCm 1.3 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.4 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_43 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 44.0 ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.6 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.5 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_44 a :Iris,
+        :MediumShortPetalIris,
+        :MerdiumLengthPetalIris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 45.0 ;
+    :PetalLengthCm 1.9 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.8 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_45 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 46.0 ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 4.8 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_46 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 47.0 ;
+    :PetalLengthCm 1.6 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 3.8 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_47 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 48.0 ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.6 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_48 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 49.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.3 ;
+    :SepalWidthCm 3.7 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_49 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 50.0 ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.3 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_5 a :Iris,
+        :MediumShortPetalIris,
+        :MerdiumLengthPetalIris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 6.0 ;
+    :PetalLengthCm 1.7 ;
+    :PetalWidthCm 0.4 ;
+    :SepalLengthCm 5.4 ;
+    :SepalWidthCm 3.9 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_50 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 51.0 ;
+    :PetalLengthCm 4.7 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 7.0 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_51 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 52.0 ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_52 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 53.0 ;
+    :PetalLengthCm 4.9 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.9 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_53 a :Iris,
+        :MediumLongPetalIris,
+        :MerdiumLengthPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 54.0 ;
+    :PetalLengthCm 4.0 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 2.3 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_54 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 55.0 ;
+    :PetalLengthCm 4.6 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.5 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_55 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 56.0 ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_56 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 57.0 ;
+    :PetalLengthCm 4.7 ;
+    :PetalWidthCm 1.6 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 3.3 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_57 a :Iris,
+        :MediumShortPetalIris,
+        :MediumWidthPetalris,
+        :MerdiumLengthPetalIris,
+        :ShortPetalIris,
+        owl:NamedIndividual ;
+    :Id 58.0 ;
+    :PetalLengthCm 3.3 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 4.9 ;
+    :SepalWidthCm 2.4 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_58 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 59.0 ;
+    :PetalLengthCm 4.6 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 6.6 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_59 a :Iris,
+        :MediumLongPetalIris,
+        :MerdiumLengthPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 60.0 ;
+    :PetalLengthCm 3.9 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 5.2 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_6 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 7.0 ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.3 ;
+    :SepalLengthCm 4.6 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_60 a :Iris,
+        :MediumLongPetalIris,
+        :MediumShortPetalIris,
+        :MediumWidthPetalris,
+        :MerdiumLengthPetalIris,
+        owl:NamedIndividual ;
+    :Id 61.0 ;
+    :PetalLengthCm 3.5 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 2.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_61 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 62.0 ;
+    :PetalLengthCm 4.2 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 5.9 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_62 a :Iris,
+        :MediumLongPetalIris,
+        :MediumWidthPetalris,
+        :MerdiumLengthPetalIris,
+        owl:NamedIndividual ;
+    :Id 63.0 ;
+    :PetalLengthCm 4.0 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 6.0 ;
+    :SepalWidthCm 2.2 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_63 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 64.0 ;
+    :PetalLengthCm 4.7 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 6.1 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_64 a :Iris,
+        :MediumLongPetalIris,
+        :MediumShortPetalIris,
+        :MerdiumLengthPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 65.0 ;
+    :PetalLengthCm 3.6 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.6 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_65 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 66.0 ;
+    :PetalLengthCm 4.4 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_66 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 67.0 ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 5.6 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_67 a :Iris,
+        :LongPetalIris,
+        :MediumWidthPetalris,
+        owl:NamedIndividual ;
+    :Id 68.0 ;
+    :PetalLengthCm 4.1 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_68 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 69.0 ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.2 ;
+    :SepalWidthCm 2.2 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_69 a :Iris,
+        :MediumLongPetalIris,
+        :MediumWidthPetalris,
+        :MerdiumLengthPetalIris,
+        owl:NamedIndividual ;
+    :Id 70.0 ;
+    :PetalLengthCm 3.9 ;
+    :PetalWidthCm 1.1 ;
+    :SepalLengthCm 5.6 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_7 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 8.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_70 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 71.0 ;
+    :PetalLengthCm 4.8 ;
+    :PetalWidthCm 1.8 ;
+    :SepalLengthCm 5.9 ;
+    :SepalWidthCm 3.2 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_71 a :Iris,
+        :MediumLongPetalIris,
+        :MerdiumLengthPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 72.0 ;
+    :PetalLengthCm 4.0 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 6.1 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_72 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 73.0 ;
+    :PetalLengthCm 4.9 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_73 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 74.0 ;
+    :PetalLengthCm 4.7 ;
+    :PetalWidthCm 1.2 ;
+    :SepalLengthCm 6.1 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_74 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 75.0 ;
+    :PetalLengthCm 4.3 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 6.4 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_75 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 76.0 ;
+    :PetalLengthCm 4.4 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 6.6 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_76 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 77.0 ;
+    :PetalLengthCm 4.8 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 6.8 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_77 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 78.0 ;
+    :PetalLengthCm 5.0 ;
+    :PetalWidthCm 1.7 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_78 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 79.0 ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.0 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_79 a :Iris,
+        :MediumLongPetalIris,
+        :MediumShortPetalIris,
+        :MediumWidthPetalris,
+        :MerdiumLengthPetalIris,
+        owl:NamedIndividual ;
+    :Id 80.0 ;
+    :PetalLengthCm 3.5 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 2.6 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_8 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 9.0 ;
+    :PetalLengthCm 1.4 ;
+    :PetalWidthCm 0.2 ;
+    :SepalLengthCm 4.4 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_80 a :Iris,
+        :MediumLongPetalIris,
+        :MediumShortPetalIris,
+        :MediumWidthPetalris,
+        :MerdiumLengthPetalIris,
+        owl:NamedIndividual ;
+    :Id 81.0 ;
+    :PetalLengthCm 3.8 ;
+    :PetalWidthCm 1.1 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 2.4 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_81 a :Iris,
+        :MediumLongPetalIris,
+        :MediumShortPetalIris,
+        :MediumWidthPetalris,
+        :MerdiumLengthPetalIris,
+        owl:NamedIndividual ;
+    :Id 82.0 ;
+    :PetalLengthCm 3.7 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 2.4 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_82 a :Iris,
+        :MediumLongPetalIris,
+        :MerdiumLengthPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 83.0 ;
+    :PetalLengthCm 3.9 ;
+    :PetalWidthCm 1.2 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_83 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 84.0 ;
+    :PetalLengthCm 5.1 ;
+    :PetalWidthCm 1.6 ;
+    :SepalLengthCm 6.0 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_84 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 85.0 ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 5.4 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_85 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 86.0 ;
+    :PetalLengthCm 4.5 ;
+    :PetalWidthCm 1.6 ;
+    :SepalLengthCm 6.0 ;
+    :SepalWidthCm 3.4 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_86 a :Iris,
+        :LargePetalIris,
+        :LargePetalWideSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 87.0 ;
+    :PetalLengthCm 4.7 ;
+    :PetalWidthCm 1.5 ;
+    :SepalLengthCm 6.7 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_87 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 88.0 ;
+    :PetalLengthCm 4.4 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 6.3 ;
+    :SepalWidthCm 2.3 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_88 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 89.0 ;
+    :PetalLengthCm 4.1 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.6 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_89 a :Iris,
+        :MediumLongPetalIris,
+        :MerdiumLengthPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 90.0 ;
+    :PetalLengthCm 4.0 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_9 a :Iris,
+        :NarrowPetalIris,
+        :ShortPetalIris,
+        :SmallPetalIris,
+        owl:NamedIndividual ;
+    :Id 10.0 ;
+    :PetalLengthCm 1.5 ;
+    :PetalWidthCm 0.1 ;
+    :SepalLengthCm 4.9 ;
+    :SepalWidthCm 3.1 ;
+    :Species :Species_Iris-setosa .
+
+ent:entity_90 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 91.0 ;
+    :PetalLengthCm 4.4 ;
+    :PetalWidthCm 1.2 ;
+    :SepalLengthCm 5.5 ;
+    :SepalWidthCm 2.6 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_91 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 92.0 ;
+    :PetalLengthCm 4.6 ;
+    :PetalWidthCm 1.4 ;
+    :SepalLengthCm 6.1 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_92 a :Iris,
+        :MediumLongPetalIris,
+        :MerdiumLengthPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 93.0 ;
+    :PetalLengthCm 4.0 ;
+    :PetalWidthCm 1.2 ;
+    :SepalLengthCm 5.8 ;
+    :SepalWidthCm 2.6 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_93 a :Iris,
+        :MediumShortPetalIris,
+        :MediumWidthPetalris,
+        :MerdiumLengthPetalIris,
+        :ShortPetalIris,
+        owl:NamedIndividual ;
+    :Id 94.0 ;
+    :PetalLengthCm 3.3 ;
+    :PetalWidthCm 1.0 ;
+    :SepalLengthCm 5.0 ;
+    :SepalWidthCm 2.3 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_94 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 95.0 ;
+    :PetalLengthCm 4.2 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.6 ;
+    :SepalWidthCm 2.7 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_95 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 96.0 ;
+    :PetalLengthCm 4.2 ;
+    :PetalWidthCm 1.2 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 3.0 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_96 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 97.0 ;
+    :PetalLengthCm 4.2 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_97 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 98.0 ;
+    :PetalLengthCm 4.3 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 6.2 ;
+    :SepalWidthCm 2.9 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_98 a :Iris,
+        :MediumShortPetalIris,
+        :MediumWidthPetalris,
+        :MerdiumLengthPetalIris,
+        :ShortPetalIris,
+        owl:NamedIndividual ;
+    :Id 99.0 ;
+    :PetalLengthCm 3.0 ;
+    :PetalWidthCm 1.1 ;
+    :SepalLengthCm 5.1 ;
+    :SepalWidthCm 2.5 ;
+    :Species :Species_Iris-versicolor .
+
+ent:entity_99 a :Iris,
+        :LargePetalIris,
+        :LargePetalNarrowSepalIris,
+        :LongPetalIris,
+        :WidePetalIris,
+        owl:NamedIndividual ;
+    :Id 100.0 ;
+    :PetalLengthCm 4.1 ;
+    :PetalWidthCm 1.3 ;
+    :SepalLengthCm 5.7 ;
+    :SepalWidthCm 2.8 ;
+    :Species :Species_Iris-versicolor .
+
+:Id a owl:DatatypeProperty ;
+    rdfs:range xsd:decimal .
+
+:SepalLengthCm a owl:DatatypeProperty ;
+    rdfs:range xsd:decimal .
+
+:Species a owl:ObjectProperty .
+
+:SepalWidthCm a owl:DatatypeProperty ;
+    rdfs:range xsd:decimal .
+
+:PetalWidthCm a owl:DatatypeProperty ;
+    rdfs:range xsd:decimal .
+
+:PetalLengthCm a owl:DatatypeProperty ;
+    rdfs:range xsd:decimal .
+
+:MediumWidthPetalris a owl:Class ;
+    rdfs:label "MediumWidthPetalris" ;
+    rdfs:subClassOf :Iris ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Iris [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.0 ] [ xsd:maxExclusive 1.16 ] ) ] ] ) ] .
+
+:MediumLongPetalIris a owl:Class ;
+    rdfs:label "MediumLongPetalIris" ;
+    rdfs:subClassOf :Iris,
+        :MerdiumLengthPetalIris ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Iris [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.33 ] [ xsd:maxExclusive 4.1 ] ) ] ] ) ] .
+
+:MediumShortPetalIris a owl:Class ;
+    rdfs:label "MediumShortPetalIris" ;
+    rdfs:subClassOf :Iris,
+        :MerdiumLengthPetalIris ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Iris [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.7 ] [ xsd:maxExclusive 3.9 ] ) ] ] ) ] .
+
+:MerdiumLengthPetalIris a owl:Class ;
+    rdfs:label "MerdiumLengthPetalIris" ;
+    rdfs:subClassOf :Iris ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( :MediumShortPetalIris :MediumLongPetalIris ) ] .
+
+:LargePetalWideSepalIris a owl:Class ;
+    rdfs:label "LargePetalWideSepalIris" ;
+    rdfs:subClassOf :LargePetalIris ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :LargePetalIris [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 3.04 ] ) ] ] ) ] .
+
+:SmallPetalIris a owl:Class ;
+    rdfs:label "SmallPetalIris" ;
+    rdfs:subClassOf :NarrowPetalIris,
+        :ShortPetalIris ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :ShortPetalIris :NarrowPetalIris ) ] .
+
+:Species_Iris-setosa a owl:NamedIndividual ;
+    rdfs:label "Iris-setosa" .
+
+:Species_Iris-versicolor a owl:NamedIndividual ;
+    rdfs:label "Iris-versicolor" .
+
+:Species_Iris-virginica a owl:NamedIndividual ;
+    rdfs:label "Iris-virginica" .
+
+:NarrowPetalIris a owl:Class ;
+    rdfs:label "NarrowPetalIris" ;
+    rdfs:subClassOf :Iris ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Iris [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:maxExclusive 1.0 ] ) ] ] ) ] .
+
+:ShortPetalIris a owl:Class ;
+    rdfs:label "ShortPetalIris" ;
+    rdfs:subClassOf :Iris ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Iris [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:maxExclusive 3.33 ] ) ] ] ) ] .
+
+:LargePetalNarrowSepalIris a owl:Class ;
+    rdfs:label "LargePetalNarrowSepalIris" ;
+    rdfs:subClassOf :LargePetalIris ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :LargePetalIris [ a owl:Restriction ;
+                        owl:onProperty :SepalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:maxExclusive 3.04 ] ) ] ] ) ] .
+
+:LongPetalIris a owl:Class ;
+    rdfs:label "LongPetalIris" ;
+    rdfs:subClassOf :Iris ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Iris [ a owl:Restriction ;
+                        owl:onProperty :PetalLengthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 4.1 ] ) ] ] ) ] .
+
+:LargePetalIris a owl:Class ;
+    rdfs:label "LargePetalIris" ;
+    rdfs:subClassOf :LongPetalIris,
+        :WidePetalIris ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :LongPetalIris :WidePetalIris ) ] .
+
+:WidePetalIris a owl:Class ;
+    rdfs:label "WidePetalIris" ;
+    rdfs:subClassOf :Iris ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Iris [ a owl:Restriction ;
+                        owl:onProperty :PetalWidthCm ;
+                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:decimal ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1.16 ] ) ] ] ) ] .
+
+:Iris a owl:Class ;
+    rdfs:label "Iris" ;
+    rdfs:subClassOf owl:Thing .
+
