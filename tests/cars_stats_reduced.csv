@@ -1,0 +1,10 @@
+file;classes;individuals;restrictions;levels;n_leaves;multi_parent;avg_branching;std_branching;avg_inst;avg_leaf_inst
+tests/TaBIIC2/cars.ttl;38;88243;28;6;24;9;3.286;0.994;12458.474;4036.875
+tests/HAC/cars.ttl;19858;10015;0;21;9929;0;2.0;0.01;0.504;1.007
+tests/FCA/cars.ttl;9677;88076;47461;8;949;9652;5.194;3.23;9.1;92.792
+tests/LLMs/cars_chatgpt_5.2.ttl;66;88068;65;4;45;0;3.095;0.436;1334.242;1956.889
+tests/LLMs/cars_claude_haiku_4.5.ttl;20;88068;19;4;13;0;2.714;0.488;4403;6568.769
+tests/LLMs/cars_claude_opus_4.6.ttl;7;88068;6;3;4;0;2;0.0;12580;22015
+tests/LLMs/cars_claude_sonet_4.6.ttl;12;88068;11;3;8;0;2.75;0.5;7338.333;11007.5
+tests/LLMs/cars_gemini_3_fast.ttl;7;1008;6;3;4;0;2;0.0;142.857;250
+tests/LLMs/cars_gemini_3_reasoning.ttl;16;88068;15;3;10;0;2.5;1.225;5503.75;8806
