@@ -1,0 +1,53 @@
+{
+  "columns": {
+    "brand": {
+      "type": "categorical",
+      "include": false
+    },
+    "model": {
+      "type": "title_id",
+      "include": false
+    },
+    "year": {
+      "type": "numeric",
+      "include": true
+    },
+    "price": {
+      "type": "numeric",
+      "include": true
+    },
+    "transmission": {
+      "type": "categorical",
+      "include": true
+    },
+    "mileage": {
+      "type": "numeric",
+      "include": true
+    },
+    "fuelType": {
+      "type": "categorical",
+      "include": true
+    },
+    "tax": {
+      "type": "numeric",
+      "include": false
+    },
+    "mpg": {
+      "type": "numeric",
+      "include": true
+    },
+    "engineSize": {
+      "type": "numeric",
+      "include": true
+    }
+  },
+  "fca": {
+    "max_depth": 20,
+    "discretize": {
+      "n_bins": 3,
+      "strategy": "quantile"
+    },
+    "concept_ns": "http://example.org/cars/schema#",
+    "entity_ns": "http://example.org/cars/data/"
+  }
+}

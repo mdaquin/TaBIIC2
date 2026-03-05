@@ -1,0 +1,43 @@
+Build an OWL ontology in Turtle format from the attached cars CSV file.
+
+Use only these columns: year, price, transmission, mileage, fuelType, mpg, engineSize.
+Ignore brand, model, and tax entirely.
+
+Output requirements:
+
+PREFIXES
+  @prefix :    <http://example.org/cars/schema#> .
+  @prefix ent: <http://example.org/cars/data/> .
+  @prefix owl: <http://www.w3.org/2002/07/owl#> .
+  @prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> .
+  @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+PROPERTIES
+  One owl:DatatypeProperty per numeric column (year, price, mileage, mpg,
+  engineSize), range xsd:decimal.
+  One owl:ObjectProperty per categorical column (transmission, fuelType);
+  values are owl:NamedIndividual instances (e.g. ent:Automatic, ent:Petrol).
+
+TAXONOMY (2-4 levels deep)
+  - Root class as subclass of owl:Thing.
+  - Subclasses connected by rdfs:subClassOf.
+  - Each non-root class has an owl:equivalentClass built from
+    owl:intersectionOf(parent class, owl:Restriction...) using:
+    - owl:someValuesFrom with OWL 2 datatype restrictions (xsd facets) for
+      numeric columns. Example restriction:
+        [ a owl:Restriction ; owl:onProperty :mileage ;
+          owl:someValuesFrom [ a rdfs:Datatype ; owl:onDatatype xsd:decimal ;
+            owl:withRestrictions ([ xsd:minInclusive "0.0"^^xsd:decimal ]
+                                  [ xsd:maxExclusive "50000.0"^^xsd:decimal ]) ] ]
+    - owl:hasValue for categorical columns. Example restriction:
+        [ a owl:Restriction ; owl:onProperty :fuelType ;
+          owl:hasValue ent:Petrol ]
+  Choose thresholds that reflect real boundaries in the data.
+
+INDIVIDUALS
+  For each row (0-indexed), declare ent:entity_<N> as owl:NamedIndividual,
+  typed to its most specific leaf class only, with property values for all
+  seven columns (numeric as xsd:decimal literals, categorical as the
+  corresponding NamedIndividual).
+
+Output only valid Turtle, no prose or markdown fences.

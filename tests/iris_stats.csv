@@ -1,0 +1,9 @@
+file,n_classes,n_individuals,n_object_properties,n_datatype_properties,n_restrictions,n_equiv_class,n_levels,n_roots,n_leaves,n_multi_parent,avg_depth,std_depth,avg_branching,std_branching,avg_inst,med_inst,std_inst,avg_leaf_inst,med_leaf_inst,std_leaf_inst,n_empty_classes,coverage
+tests/FCA/iris.ttl,95,153,1,5,256,94,5,1,24,83,2.621,0.98,3.155,1.849,1.579,0,4.314,6.25,2.5,6.752,71,0.9804
+tests/HAC/iris.ttl,300,153,1,5,0,0,13,1,150,0,8.09,2.108,1.993,0.082,0.5,0.5,0.501,1,1.0,0.0,150,0.9804
+tests/LLMs/chatgpt_5.2.ttl,6,150,0,4,5,5,3,1,4,0,1.167,0.753,2.5,0.707,25,27.0,22.145,37.5,40.5,13.868,2,1.0
+tests/LLMs/gemini_3_fast.ttl,7,150,0,4,6,6,4,1,4,0,1.714,1.113,2,0.0,21.429,11,24.316,37.5,42.5,19.468,3,1.0
+tests/LLMs/gemini_3_reasoning.ttl,5,150,0,4,4,4,3,1,3,0,1.2,0.837,2,0.0,30,47,27.468,50,50,3.0,2,1.0
+tests/LLMs/claude_sonnet_4.6.ttl,10,150,0,4,10,9,3,1,6,0,1.5,0.707,2.25,0.5,15,18.5,13.92,25,24.0,6.986,4,1.0
+tests/LLMs/claude_opus_4.6.ttl,5,150,0,4,4,4,3,1,3,0,1.2,0.837,2,0.0,30,46,27.532,50,50,4.0,2,1.0
+tests/TaBIIC2/iris.ttl,13,153,1,5,9,12,4,1,6,4,1.538,0.877,2.286,2.563,54,50,40.191,28.333,19.5,20.675,0,0.9804
