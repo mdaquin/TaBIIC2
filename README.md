@@ -2,6 +2,11 @@
 
 A web application for interactively building taxonomies from tabular data. Upload a CSV, Excel, or JSON file, inspect and configure your columns, then construct a hierarchy of concepts — each representing a subset of rows defined by restrictions on column values. Concepts can be created manually or discovered automatically using a Weighted Self-Organizing Map (WSOM).
 
+Details of the tool and of tests carried out are available in the article
+
+d'Aquin, Mathieu. “TaBIIC2: Interactive Building of Ontological Taxonomies using Weighted Self-Organizing Maps.” (2026). [https://arxiv.org/abs/2605.24899](https://arxiv.org/abs/2605.24899)
+
+
 ## Features
 
 ### Data tab
